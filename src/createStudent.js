@@ -14,7 +14,7 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-//Código antes do Lint
+// Código antes do Lint
 // const createStudent = (nome) => {
 //   return {
 //     name: nome,
@@ -22,7 +22,7 @@
 //   };
 // };
 
-//Código depois do Lint
+// Código depois do Lint
 
 const createStudent = (nome) => ({
     name: nome,
