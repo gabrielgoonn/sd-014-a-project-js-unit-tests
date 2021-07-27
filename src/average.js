@@ -11,7 +11,20 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+// https://pt.stackoverflow.com/questions/471816/javascript-como-calcular-m%C3%A9dia-de-dados-em-um-array-com-v%C3%A1rios-objetos-e-retor
 
-const average = () => {};
+const average = (array) => {
+  let total = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+   if (typeof array[index] !== 'number') {
+    return undefined;
+    }
+    total += array[index];
+  }
+  return Math.round(total / array.length);
+};
 
-module.exports = average; 
+module.exports = average;  
