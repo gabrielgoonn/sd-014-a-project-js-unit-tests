@@ -27,11 +27,14 @@ const productDetails = require('../src/productDetails');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+const produtos = productDetails('Alcool gel', 'Máscara');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
+    assert.deepStrictEqual(Array.isArray(productDetails('firstProduct', 'secondProduct')), true);
+    assert.deepStrictEqual(produtos.length, 2);
+    assert.deepStrictEqual(typeof Object.entries(produtos), 'object');
+    assert.notDeepStrictEqual
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
