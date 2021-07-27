@@ -19,6 +19,15 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const soma = (a, b) => a + b;
+const multiplicar = (a, b) => a * b;
+const dividir = (a, b) => Math.floor(a / b);
+const subtracao = (a, b) => a - b;
+const calculator = {
+  add: soma,
+  mult: multiplicar,
+  div: dividir,
+  sub: subtracao,
+};
 
 module.exports = calculator;
