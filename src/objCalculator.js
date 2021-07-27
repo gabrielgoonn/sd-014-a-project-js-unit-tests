@@ -18,7 +18,12 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
-
-const calculator = {};
+// Fonte do "parseInt(num1 / num2, 10)": https://stackoverflow.com/questions/7818903/jslint-says-missing-radix-parameter
+const calculator = {
+  add: (num1, num2) => num1 + num2,
+  mult: (num1, num2) => num1 * num2,
+  div: (num1, num2) => parseInt(num1 / num2, 10),
+  sub: (num1, num2) => num1 - num2,
+};
 
 module.exports = calculator;
