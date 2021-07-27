@@ -12,8 +12,22 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
+const average = (array) => {
   // add your implementation here
-};
+ if (array.length === 0) {
+   return undefined;
+ }
 
+ let soma = 0;
+ let media = 0;
+ for (let index = 0; index < array.length; index += 1) {
+   if (typeof array[index] !== 'number') {
+     return undefined;
+   }
+   soma += array[index];
+   media = Math.round(soma / array.length);
+ }
+return media;
+};
+// Source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 module.exports = average;
