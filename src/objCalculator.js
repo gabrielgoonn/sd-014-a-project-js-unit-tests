@@ -19,6 +19,11 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (a, b) => (a + b),
+  mult: (a, b) => (a * b),
+  div: (a, b) => Math.floor(a / b), // Math.floor, arredonda o resultado para o menor número inteiro! - https://www.w3schools.com/js/js_math.asp
+  sub: (a, b) => (a - b),
+};
 
 module.exports = calculator;
