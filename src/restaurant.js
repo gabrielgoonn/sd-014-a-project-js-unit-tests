@@ -96,7 +96,7 @@ const createMenu = (object) => {
       for (let item of currentConsuption) {
         sum += searchItemValue(object, item);
       }
-      return sum;
+      return sum * 1.1;
     },
   };
 };
