@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-
+//iniciando
 const assert = require('assert');
 const average = require('../src/average');
 
