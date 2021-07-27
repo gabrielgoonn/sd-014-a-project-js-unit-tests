@@ -20,26 +20,22 @@
 */
 
 const calculator = {
-  add: function (...nums) {
+  add: (...nums) => {
     let result = 0;
     for (let num of nums) {
       result += num;
     }
     return result;
   },
-  mult: function (...nums) {
+  mult: (...nums) => {
     let result;
     for (let num of nums) {
-      result? result = num * result : result = num;
+      result = result ? num * result : num;
     }
     return result;
   },
-  div: function (num1, num2) {
-    return Math.floor(num1/num2);
-  },
-  sub: function (num1, num2) {
-    return num1 - num2;
-  }
+  div: (num1, num2) => Math.floor(num1 / num2),
+  sub: (num1, num2) => num1 - num2,
 };
 
 module.exports = calculator;
