@@ -16,29 +16,15 @@ const average = (array) => {
   let sumOfArray = 0;
   let arrayAverage = 0;
   const divider = array.length;
+  if (array.length === 0) { return undefined; }
   for (let i = 0; i < divider; i += 1) {
   sumOfArray += array[i];
   arrayAverage = sumOfArray / divider;  
-  return sumOfArray;
-   } 
+  if (divider === 0 || typeof array[i] !== 'number') { 
+    return undefined; 
   }
-
-  // console.log(average([3, 4, 5]));
-
-// assert.strictEqual(average([3, 4, 5]), 4);
-// assert.strictEqual(average([1, 2, 3, '4', 5]), undefined);
-// assert.strictEqual(average([0, 0, 0, 0, 0, 0, 0]), 0);
-// assert.strictEqual(average([1, 2, '3']), undefined);
-// assert.strictEqual(average([1, 2, 3]), 2);
-// assert.strictEqual(average([0, 0, 0, 0, 0, 0, 1]), 0);
-
-// assert.strictEqual(average([]), undefined);
-// assert.strictEqual(average([' ']), undefined);
-// assert.strictEqual(average(['um', 'dois', 'tres']), undefined);
-// assert.strictEqual(average([47, 63, 122]), 77);
-
-// assert.strictEqual(average([-11, 2, 5]), -1);
-
-// assert.strictEqual(average([-11, -5, 2]), -5);
+  } 
+  return Math.round(arrayAverage);
+  };
 
 module.exports = average;
