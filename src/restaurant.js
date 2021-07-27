@@ -85,6 +85,6 @@ const createMenu = (object) => {
   };
   return meuRestaurante;
 };
-console.log(createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }).fetchMenu);
+console.log(createMenu());
 console.log(typeof createMenu());
 module.exports = createMenu;
