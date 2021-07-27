@@ -34,6 +34,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
     assert.strictEqual(Array.isArray(productDetails('produto1', 'produto2')), true);
+    // referência https://www.w3schools.com/jsref/jsref_isarray.asp
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.deepStrictEqual(productDetails('produto1', 'produto2').length, 2)
     // Teste que os dois itens dentro do array retornado pela função são objetos.
