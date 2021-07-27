@@ -11,7 +11,23 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
-const average = () => {};
+//  https://www.w3schools.com/jsref/jsref_tofixed.asp
+//  https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+const average = (array) => {
+  let media = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let i = 0; i < array.length; i += 1) {
+    const type = typeof array[i];
+    if (type !== 'number') {
+      return undefined;
+    }
+    media += array[i];
+  }
+  media = parseInt((media / array.length).toFixed(0), 10);
+  return media;
+};
+console.log(average([-11, -5, 2]));
 
 module.exports = average;
