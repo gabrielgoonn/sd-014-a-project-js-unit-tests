@@ -68,6 +68,6 @@ describe('9 - Implemente os casos de teste para a função `getCharacter`', () =
     assert.deepStrictEqual(getCharacter('Brienne'), brienne);
     assert.deepStrictEqual(getCharacter('Melissandre'), melissandre);
     assert.deepStrictEqual(getCharacter('arya'), arya);
-    assert.deepStrictEqual(getCharacter('teste'), undefined);
+    assert.deepStrictEqual(getCharacter('rodolfo'), undefined);
   });
 });
