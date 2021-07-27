@@ -45,6 +45,24 @@ Retorno:
 OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
+const characters = {
+  arya: {
+    name: 'Arya Stark',
+    class: 'Rogue',
+    phrases: ['Not today', 'A girl has no name.'],
+  },
+  brienne: {
+    name: 'Brienne Tarth',
+    class: 'Knight',
+    phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
+  },
+  melissandre: {
+    name: 'Melissandre',
+    class: 'Necromancer',
+    phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
+  },
+};
+
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
     // assert.fail();
