@@ -53,7 +53,7 @@ describe('9 - Implemente os casos de teste para a função `getCharacter`', () =
     let arya = {
       name: 'Arya Stark',
       class: 'Rogue',
-      phrases: [ 'Not today', 'A girl has no name.' ]
+      phrases: ['Not today', 'A girl has no name.']
     }
     assert.deepStrictEqual(getCharacter('Arya'), arya)
     // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
