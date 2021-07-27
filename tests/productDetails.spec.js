@@ -36,7 +36,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(Object.keys(productDetails('arroz', 'feijão')).length, 2);
     assert.strictEqual(typeof Object.keys(productDetails), 'object');
     assert.notDeepStrictEqual(productDetails('arroz', 'feijão')[0], productDetails('arroz', 'feijão')[1]);
-    // Teste que os dois productIds terminam com 123.
     assert.strictEqual(productDetails('arroz', 'feijão')[0].details.productId.slice(-3), '123');
     assert.strictEqual(productDetails('arroz', 'feijão')[1].details.productId.slice(-3), '123');
   });
