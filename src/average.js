@@ -12,6 +12,26 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
-//iniciando projeto
+const average = (numbers) => {
+  let soma = 0;
+
+  //Verifica se o valor passado é um numero finito;
+  if (!numbers.every(Number.isFinite) || numbers.length === 0) {
+    return undefined;
+  } else {
+    for (let index = 0; index < numbers.length; index += 1) {
+      soma += numbers[index];
+    }
+
+    //Função que arredonda para o numero inteiro mais proximo;
+    return Math.round(soma / numbers.length);
+  }
+};
+
+console.log(average([0, 0, 0, 0, 0, 0, 1]));
+
 module.exports = average;
+
+
+
+//Soluções encontradas nos sites (https://mzl.la/3eXSkvB) e (https://www.w3schools.com/jsref/jsref_round.asp);
