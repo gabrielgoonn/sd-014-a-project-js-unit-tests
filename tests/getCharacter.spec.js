@@ -63,7 +63,7 @@ const characters = {
   },
 };
 
-describe('9 - Implemente os casos de teste para a função `getCharacter`', () => {
+describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
