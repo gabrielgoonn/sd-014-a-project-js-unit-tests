@@ -20,5 +20,17 @@
 */
 
 const calculator = {};
+const sum = (num1, num2) => (num1 + num2);
+const vezes = (num1, num2) => (num1 * num2);
+const less = (num1, num2) => (num1 - num2);
+const share = (num1, num2) => Math.floor(num1 / num2);
 
+calculator.add = sum;
+calculator.mult = vezes;
+calculator.sub = less;
+calculator.div = share;
+
+console.log(calculator.div(3, 2));
 module.exports = calculator;
+
+//referencia de arredondamento para baixo Math.floor https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
