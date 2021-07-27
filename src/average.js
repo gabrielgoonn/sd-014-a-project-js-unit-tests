@@ -13,6 +13,8 @@
 */
 
 const average = (arr) => {
+  // Verifica no array se existe um elemento com tipo diferente de 'number'. Caso isso aconteça ou o array esteja vazio retorna nulo
+  // caso contrário retorna o resultado esperado da função average
   if (!arr.every((element) => typeof (element) === 'number') || arr.length === 0) return undefined; 
   return Math.round(arr.reduce((a, b) => a + b) / arr.length);
 };
