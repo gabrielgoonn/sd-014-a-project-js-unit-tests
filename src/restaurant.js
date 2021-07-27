@@ -81,8 +81,8 @@
 
 const createMenu = (objeto) => {
   let meuMenu;
-  if (meuMenu) {
-    meuMenu = Object.assign({}, objeto);
+  if (objeto) {
+    meuMenu = { ...objeto };
   }
   
   return {
