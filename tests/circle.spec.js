@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+ /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
@@ -32,6 +32,12 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.strictEqual(typeof circle, 'object');
+    assert.strictEqual(typeof circle(3), 'object');
+    assert.strictEqual(Object.keys(circle(2)).length, 3);
+    assert.strictEqual(circle(), undefined);
+    assert.strictEqual(circle(2).circumference, 12.56);
+    // obrigado ao amigo Walmit pela ajuda, para entender onde eu poderia encaixar o parseFloat, para sair como o exercicio pede;
+    assert.strictEqual(circle(3).area, 28.26);
+    assert.deepStrictEqual(circle(3), {radius: 3, area: 28.26, circumference: 18.84})
   });
 });
