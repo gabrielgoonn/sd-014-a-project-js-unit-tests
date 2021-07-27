@@ -23,16 +23,16 @@ const circle = (radius) => {
   if (!radius) { return undefined; }
   return {
     radius,
-    area: parseFloat((PI * radius * radius).toFixed(2)),
+    area: parseFloat((PI * radius * radius).toPrecision(4)),
     circumference: 2 * PI * radius,
   };
 };
 
 module.exports = circle;
 
-const assert = require('assert');
+/*  const assert = require('assert');
 
-/*  assert.strictEqual(typeof circle(1), 'object');
+assert.strictEqual(typeof circle(1), 'object');
 assert.strictEqual((Object.keys(circle(1)).length), 3);
 assert.strictEqual(circle(), undefined);
 assert.strictEqual(circle(2).circumference, 12.56);
