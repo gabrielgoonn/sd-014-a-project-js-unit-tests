@@ -38,6 +38,10 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.strictEqual(Number(circle(3).area.toFixed(2)), 28.26);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.strictEqual(circle(3).toFixed(2), {radius: 3, area: 28.26, circumference: 18.84});
+    const result = circle(3);
+    const expected = {radius: 3, area: 28.26, circumference: 18.84};
+    assert.strictEqual(result.radius, expected.radius);
+    assert.strictEqual(Number(result.area.toFixed(2)), expected.area);
+    assert.strictEqual(result.circumference, expected.circumference);
   });
 });
