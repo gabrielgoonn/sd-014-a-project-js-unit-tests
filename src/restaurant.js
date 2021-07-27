@@ -3,10 +3,11 @@
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
   cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
-  - ler o menu cadastrado; 
-  - fazer pedidos;
-  - verificar o que foi pedido;
-  - somar o valor da conta.
+
+  - ler o menu cadastrado; read
+  - fazer pedidos; order
+  - verificar o que foi pedido; check
+  - somar o valor da conta. sum
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
   Abaixo você verá uma série de testes e passos que devem ser, NECESSARIAMENTE, feitos em ordem para o bom desenvolvimento do sistema. 
@@ -79,6 +80,10 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = (menu) => ({ 
+  fetchMenu: () => menu
+  food: (a, b) => a + b, 
+  drink: (a, b) => a + b,
+ });
 
 module.exports = createMenu;
