@@ -13,5 +13,5 @@
 */
 
 const average = () => {};
-
+console.log('bora nessa fml');
 module.exports = average;
