@@ -33,9 +33,9 @@ describe('6 - Implemente os casos de ok para a função `productDetails`', () =>
     // ESCREVA SEUS okS ABAIXO:
     let ok = productDetails('Alcool gel', 'Máscara');
     // ok que o retorno da função é um array.
-    assert.strictEqual(productDetails.length > 1, true);
+    assert.strictEqual(typeof productDetails(), 'object');
     // ok que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(productDetails.length, 2);
+    assert.strictEqual(productDetails().length, 2);
     // ok que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof ok[0], 'object');
     assert.strictEqual(typeof ok[1], 'object');
