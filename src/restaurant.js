@@ -86,17 +86,15 @@ const searchItemValue = (menu, itemName) => {
 };
 
 const createMenu = (object) => {
-  let menu;
-  if (object) menu = object;
   const currentConsuption = [];
   return {
-    fetchMenu: () => menu,
+    fetchMenu: () => object,
     order: (item) => currentConsuption.push(item),
     consumption: () => currentConsuption,
     pay: () => {
       let sum = 0;
       for (let item of currentConsuption) {
-        sum += searchItemValue(menu, item);
+        sum += searchItemValue(object, item);
       }
       return sum;
     },
