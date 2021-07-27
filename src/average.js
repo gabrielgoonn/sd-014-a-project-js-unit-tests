@@ -22,7 +22,7 @@ const average = (array) => {
   for (let index = 0; index < array.length; index += 1) {
     soma += array[index];
     // verifica se o tipo de cada valor é um número e se o array não está vazio
-    if (typeof (array[index]) !== 'number') {
+    if (typeof array[index] !== 'number') {
       return undefined;
     }
   }
