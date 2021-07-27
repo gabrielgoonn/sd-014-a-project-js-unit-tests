@@ -99,7 +99,7 @@ const createMenu = (objeto) => {
       for (let consumo of consumoArray) {
         soma += pagamento(meuMenu, consumo);
       }
-      return parseFloat(soma.toPrecision(5));
+      return soma;
     },
 };
 };
