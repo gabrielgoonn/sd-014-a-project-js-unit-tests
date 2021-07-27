@@ -39,9 +39,10 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.strictEqual(circle(2).circumference, 12.56);
 
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    assert.deepStrictEqual(Math.round(circle(3).area * 1e2)/1e2, 28.26);
+    assert.deepStrictEqual(Math.round(circle(3).area * 1e2)/1e2, 28.26); // Arredondando o valor com o Math.round e multiplicando o valor por 100 obtenho o valor de: 2826, depois divido o valor por 100 para obter o resultado arredondado com duas casas decimais.
 
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.deepStrictEqual
+    assert.deepStrictEqual(Math.round(circle(3).area * 1e2)/1e2, 28.26);
+    assert.deepStrictEqual(Math.round(circle(3).circumference * 1e2)/1e2, 18.84);
   });
 });
