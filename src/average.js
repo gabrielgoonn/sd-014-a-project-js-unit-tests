@@ -16,6 +16,10 @@ const average = (arrayNumbers) => {
   let averageResult = 0;
   
   for (let index = 0; index < arrayNumbers.length; index += 1) {
+    if (arrayNumbers.length === 0 || typeof arrayNumbers[index] !== 'number') {
+      averageResult = undefined;
+      return averageResult;
+    }
     averageResult += arrayNumbers[index];
   }
   return averageResult / arrayNumbers.length;
