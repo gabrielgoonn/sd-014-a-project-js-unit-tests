@@ -13,5 +13,5 @@
 */
 
 const average = () => {};
-
+// comentado para dar o primeiro PR
 module.exports = average;
