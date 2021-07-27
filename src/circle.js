@@ -36,7 +36,7 @@ const raioDois = {
 };
 const raioTres = {
   radius: 3,
-  area: parseFloat('28.26').toPrecision(1),
+  area: 3.14 * 3 * 3,
   circumference: 18.84,
 };
 assert.strictEqual(typeof circle(1), 'object');
