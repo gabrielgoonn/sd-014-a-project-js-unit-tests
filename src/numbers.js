@@ -12,10 +12,10 @@
 const numbers = (myArray) => {
   for (let i = 0; i < myArray.length; i += 1) {
     if (typeof myArray[i] !== 'number') {
-      return false;
+      return false; // se meu index for diferente de number, return false
     }
   }
-  return true;
+  return true; // se for number return true
 };
 
 module.exports = numbers;
