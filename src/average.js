@@ -21,7 +21,7 @@ const average = (array) => {
     } 
   }
   for (let index = 0; index < array.length; index += 1) {
-    let numero = parseInt(array[index]);
+    let numero = parseInt(array[index], 10);
     soma += numero;
     resultado = soma / array.length;
   } return resultado;
