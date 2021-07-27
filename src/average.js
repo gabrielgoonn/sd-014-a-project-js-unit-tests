@@ -14,8 +14,8 @@
 
 const average = (arrayNumbers) => {
   let division = arrayNumbers.length;
-  let sum = 0;
   let result;
+  let sum = 0;
   for (let index = 0; index < arrayNumbers.length; index += 1) {
     if (typeof arrayNumbers[index] !== 'string') {
       sum += arrayNumbers[index];
