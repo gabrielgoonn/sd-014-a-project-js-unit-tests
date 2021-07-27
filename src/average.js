@@ -15,16 +15,16 @@
 const average = (array) => {
   let sumArray = 0;
   if (array.length === 0) {
-    return undefined
+    return undefined;
   }
-  for (i = 0; i < array.length; i += 1) {
-    if (typeof array[i] !== 'number') {
-      return undefined
+  for (index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number') {
+      return undefined;
     }
-    sumArray += array[i]
+    sumArray += array[index];
   }
   // Math.round usado para inteirar o numero busquei no endereço https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
   return Math.round(sumArray / array.length);
 };
-// console.log(average([-11, -5, 2]));
+console.log(average([-11, -5, 2]));
 module.exports = average;
