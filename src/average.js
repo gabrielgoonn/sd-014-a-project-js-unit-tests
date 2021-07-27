@@ -14,6 +14,24 @@
 
 // Iniciando novo projeto.
 
-const average = () => {};
+const average = (array) => {
+  let sumValues = 0;
+  // verifica se o array não é vazio.
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let i = 0; i < array.length; i += 1) {
+    // verifica se o tipo do array[i] é um número.
+    if (typeof (array[i]) !== 'number') {
+      return undefined;
+    }
+    sumValues += array[i];
+  }
+  return Math.round(sumValues / array.length);
+};
 
+// const ex1 = [1];
+// const ex2 = [1, 2, 3, 4, 5];
+// const output = average(ex1);
+// console.log(output);
 module.exports = average;
