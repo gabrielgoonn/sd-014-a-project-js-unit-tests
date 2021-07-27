@@ -23,10 +23,10 @@ const circle = (radius) => {
   if (!radius) { return undefined; }
   return {
     radius,
-    area: PI * (parseFloat(radius * radius).toPrecision(2)),
+    area: parseFloat(PI * (radius * radius).toPrecision(2)),
     circumference: 2 * PI * radius,
   };
 };
-console.log(circle(2));
+console.log(circle(3));
 
 module.exports = circle;
