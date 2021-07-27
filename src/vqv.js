@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+/* com base em: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_operators */
+const vqv = (nome, idade) => {
+  if (!nome && !idade) {
+    return undefined;
+  }
+  const bemVindo = `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
 
+  return bemVindo;
+};
 module.exports = vqv;
