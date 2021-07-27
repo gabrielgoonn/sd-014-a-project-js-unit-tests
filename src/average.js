@@ -13,7 +13,8 @@
 */
 
 const average = (arrayNums) => {
-  let length = arrayNums.length;
+  // Length é o tamanho do arrayNums (mesmo de arrayNums.length); 
+  let { length } = arrayNums;
   let sum = 0;
 
   if (length === 0) {
