@@ -83,7 +83,7 @@ const searchItemValue = (menu, itemName) => {
   for (let itemClass in menu) {
     if (menu[itemClass][itemName]) return menu[itemClass][itemName];
   }
-}
+};
 
 const createMenu = (object) => {
   let menu;
