@@ -47,6 +47,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois productIds terminam com 123.
     assert.strictEqual(productDetails()[0].details.productId.substr(productDetails()[0].details.productId.length - 3), '123');
     assert.strictEqual(productDetails()[1].details.productId.substr(productDetails()[1].details.productId.length - 3), '123');
-    // Usamos o substr para pegar os três ultimos caracteres da string e confirmamos que eles são '123' como segundo parametro do substr!
+    // Usamos o substr para pegar os três ultimos caracteres da string e confirmamos que eles são '123' como segundo parametro do substr! - https://www.w3schools.com/jsref/jsref_substr.asp
   });
 });
