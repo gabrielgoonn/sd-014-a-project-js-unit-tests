@@ -16,6 +16,11 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
-
+const vqv = (nome, idade) => {
+    return `Oi, meu nome é Tunico!
+      Tenho 30 anos,
+      trabalho na Trybe e mando muito em programação!
+      #VQV!`
+};
+console.log(vqv('Tunico', 30));
 module.exports = vqv;
