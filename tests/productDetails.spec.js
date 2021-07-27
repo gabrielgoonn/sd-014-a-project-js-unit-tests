@@ -33,8 +33,8 @@ const extraiTresUltimos = () => { // essa função percorre os 3 ultimos digitos
   let tresUltimosDigitos = '';
   for (let index = 0; index < arrayComObjetos.length; index += 1) {
     let arrayDetails = Object.values(arrayComObjetos[index].details)[0]; // extrai valor do objeto.details em um array com apenas uma posição, e acessa essa unica posição.
-    for (let indexReverse = arrayDetails.length - 3; indexReverse < arrayDetails.length; indexReverse += 1) {
-      tresUltimosDigitos = tresUltimosDigitos + arrayDetails[indexReverse];
+    for (let index2 = arrayDetails.length - 3; index2 < arrayDetails.length; index2 += 1) {
+      tresUltimosDigitos = tresUltimosDigitos + arrayDetails[index2];
     }
   }
   return tresUltimosDigitos;
