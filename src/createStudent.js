@@ -16,7 +16,7 @@
 */
 
 const createStudent = (name) => ({
-  name, // quando a chave e o valor é igual, dentro de uma arrow function, nao precisa repetir os dois.
+  name, // quando a chave e o valor é igual, nao precisa repetir os dois.
   feedback: () => 'Eita pessoa boa!',
 });
 
