@@ -19,6 +19,12 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add(num1, num2) { return num1 + num2; },
+  mult(num1, num2) { return num1 * num2; },
+  // abaixo, os ' - ' para arredondar para baixo foi visto em https://stackoverflow.com/questions/35821815/javascript-rounding-down-in-5-cases
+  div(num1, num2) { return -Math.round(-(num1 / num2)); },
+  sub(num1, num2) { return num1 - num2; },
+};
 
 module.exports = calculator;
