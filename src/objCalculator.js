@@ -19,6 +19,16 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const soma = (n1, n2) => Math.floor(n1 + n2);
+const multiplica = (n1, n2) => Math.floor(n1 * n2);
+const divide = (n1, n2) => Math.floor(n1 / n2);
+const subtrai = (n1, n2) => Math.floor(n1 - n2);
+
+const calculator = {
+  add: soma,
+  mult: multiplica,
+  div: divide,
+  sub: subtrai,
+};
 
 module.exports = calculator;
