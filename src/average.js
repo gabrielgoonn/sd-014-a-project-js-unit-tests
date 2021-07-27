@@ -13,17 +13,30 @@
 */
 
 const average = (array) => {
-  if (array === [2, 2]) {
-    return 2;
-  }
+  let summation = 0;
+  let numberOfItems = array.length;
 
-  if (array === [1, 1]) {
-    return 1;
-  }
-
-  if (array === [1, '2']) {
+  // Se o array estiver vazio retorna underfined;
+  if (numberOfItems === 0) {
     return undefined;
   }
+  // Somátorio dos numeros do array:
+  for (let index = 0; index < array.length; index += 1) {
+    // Se algum item no array for diferente de number retorna undefined;
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
+    // Somatório de todos os numeros do array;
+    summation += array[index];
+  }
+  // Média do somatório e aredondamento;
+  let averageValue = Math.round(summation / numberOfItems);
+
+  return averageValue;
 };
+
+average([2, 2]);
+average([1, 1]);
+average([1, '2']);
 
 module.exports = average;
