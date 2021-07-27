@@ -16,10 +16,13 @@
 */
 const feedback = () => 'Eita pessoa boa!';
 const createStudent = (nome) => {
+  let a = 1;
   return {
     name: nome,
     feedback,
   };
 };
-console.log(createStudent('Renan'))
+
+console.log(createStudent('Renan'));
+
 module.exports = createStudent;
