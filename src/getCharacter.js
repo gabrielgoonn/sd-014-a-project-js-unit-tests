@@ -35,6 +35,8 @@ Retorno:
   phrases: [ 'Not today', 'A girl has no name.' ]
 }
 */
+const assert = require('assert');
+const { get } = require('http');
 
 const characters = {
   arya: {
@@ -67,5 +69,12 @@ const getCharacter = (name) => {
 
   return undefined;
 };
+
+assert.deepStrictEqual(getCharacter(), undefined);
+assert.deepStrictEqual(getCharacter('Arya'), characters.arya);
+assert.deepStrictEqual(getCharacter('Brienne'), characters.brienne);
+assert.deepStrictEqual(getCharacter('Melissandre'), characters.melissandre);
+assert.deepStrictEqual(getCharacter('arYa'), characters.arya);
+assert.deepStrictEqual(getCharacter('Sonic'), undefined);
 
 module.exports = getCharacter;
