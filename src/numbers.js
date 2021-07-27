@@ -18,5 +18,4 @@ const numbers = (myArray) => {
   let msg = 'boa';
   return msg;
 };
-console.log(numbers([2, 2, 3]));
 module.exports = numbers;
