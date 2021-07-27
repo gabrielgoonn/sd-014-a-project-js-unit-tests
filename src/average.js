@@ -12,6 +12,24 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (array) => {
+  let somaAll = 0;
+  let arrayLength = 0;
+  if (array.length === 0) {
+    return undefined;
+  } // Array vazio return undefined
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+      // array com algum NaN return undefined 
+    }
+    somaAll += array[i];
+    // soma todos os numeros
+    arrayLength += 1;
+    // calcula o tamanho do array
+  }
+  return Math.round(somaAll / arrayLength);
+  // faz a média, soma de todos os numeros dividido pela quantidade de numeros somados
+  };
 
 module.exports = average;
