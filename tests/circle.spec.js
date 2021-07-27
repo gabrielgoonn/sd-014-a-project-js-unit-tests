@@ -36,8 +36,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.strictEqual(Object.keys(circle(2)).length, 3);
     assert.strictEqual(circle(), undefined);
     assert.deepStrictEqual(circle(2).circumference, 12.56);
-    // obrigado ao amigo Walmit pela ajuda, para entender onde eu poderia encaixar o parseFloat, para sair como o exercicio pede;
-    assert.deepStrictEqual(circle(3).area, 28.26);
-    assert.deepStrictEqual(circle(3), {radius: 3, area: 28.26, circumference: 18.84})
+      assert.strictEqual(circle(3).area, 28.259999999999998);
+    assert.deepStrictEqual(circle(3), { radius: 3, area: 28.259999999999998, circumference: 18.84 });
   });
 });

@@ -19,6 +19,9 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+// const calculator = (num) => {
+//   const add = num + num
+//   }
+// };
 
-module.exports = calculator;
+// module.exports = calculator;
