@@ -30,7 +30,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste se circle retorna um objeto.
     assert.deepStrictEqual(typeof (circle({})), 'object'); 
     // Teste se o objeto retornado tem 3 entradas.
-    assert.deepStrictEqual(Object.keys(circle({})), ['radius', 'area', 'circumference']);
+    assert.deepStrictEqual(Object.keys(circle({})).length, 3);
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     assert.deepStrictEqual(circle(), undefined); 
 
