@@ -12,19 +12,22 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const assert = require('assert');
-
-const average = (n1, n2) => {
-  if (typeof n1 !== 'number' || typeof n2 !== 'number') {
-    throw undefined('ai n dá');
-  } else if (n1 === 0 || n2 === 0) {
-    throw undefined('aí n dá');
-  } else {
-    let media = (n1 + n2) / 2;
-    return Math.round(media);
+const average = (array) => {
+  let numbers = 0;
+  let resultado;
+  if (array.length === 0) {
+    return undefined;
   }
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }
+    numbers += array[i];
+    resultado = numbers / array.length;
+  }
+  return Math.round(resultado);
 };
 
-assert.strictEqual(average(4, 3), 4);
+console.log(average([1, 2, 3]));
 
 module.exports = average;
