@@ -40,6 +40,6 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // assert.strictEqual(Number(circle(3)['area'].toFixed(2)), 28.26);
     assert.strictEqual(parseFloat(circle(3)['area'].toPrecision(4)), 28.26);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.deepStrictEqual(circle(3), {radius: 3, area: 28.26, circumference: 18.84});
+    assert.deepStrictEqual(circle(3), {radius: 3, area: (3.14 * 3 * 3), circumference: 18.84});
   });
 });
