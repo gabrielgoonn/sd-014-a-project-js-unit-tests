@@ -1,9 +1,6 @@
 /* eslint-disable max-len */
 
 /*
-  Essa função recebe o raio de um círculo,
-  retornando um objeto contendo suas informações (Raio, Área e Circunferência).
-  Se não for especificado um raio, a função retorna undefined.
   Elabore testes para verificar se a função está correta.
 
   Parâmetros:
@@ -18,11 +15,13 @@
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-const circle = (radius) => {
+const circle = (radius) => { // Essa função recebe o raio de um círculo,
   const PI = 3.14;
-  if (!radius) { return undefined; }
+  if (!radius) {
+    return undefined; // Se não for especificado um raio, a função retorna undefined.
+  }
   return {
-    radius,
+    radius, // retornando um objeto contendo suas informações (Raio, Área e Circunferência).
     area: PI * radius * radius,
     circumference: 2 * PI * radius,
   };
