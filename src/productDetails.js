@@ -38,5 +38,6 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
+console.log(productDetails('Alcool', 'Mascara')[1].details.productId.slice(-3));
 
 module.exports = productDetails;
