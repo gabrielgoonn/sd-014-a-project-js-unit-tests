@@ -18,10 +18,14 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor usei para saber qual math usaria para retornar o menor numero inteiro da divisao
+// Anna Hamann muito obrigado pela contribuição nessa função!
 
-// const calculator = (num) => {
-//   const add = num + num
-//   }
-// };
-
-// module.exports = calculator;
+const calculator = {
+  add: (num1, num2) => num1 + num2,
+  mult: (num1, num2) => num1 * num2,
+  div: (num1, num2) => Math.floor(num1 / num2),
+  sub: (num1, num2) => num1 - num2,
+};
+  
+module.exports = calculator;

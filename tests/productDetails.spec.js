@@ -45,6 +45,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(typeof retorna[1], 'object');
     assert.notStrictEqual(retorna[0], retorna[1]);
     assert.strictEqual(retorna[0].details.productId.endsWith('123'), true)
-    assert.strictEqual(retorna[1].details.productId.endsWith('123'), true)
+    assert.strictEqual(retorna[1].details.productId.endsWith ('123'), true)
   });
 });
