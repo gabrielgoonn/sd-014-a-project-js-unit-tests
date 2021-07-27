@@ -72,4 +72,3 @@ console.log(getCharacter('brienne'));
 console.log(getCharacter('melissandre'));
 
 module.exports = getCharacter;
-exports = characters;
