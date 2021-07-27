@@ -1,10 +1,5 @@
 /*
-  Dada uma função chamada createStudent que recebe como parâmetro um nome,
-  retorne um objeto que contenha duas chaves:
-    (1) name, contendo o nome passado como parâmetro;
-    (2) feedback, contendo uma função que retorna a frase 'Eita pessoa boa!' ao ser chamada.
-
-  Faça a função da chave feedback com arrow functions!
+   Faça a função da chave feedback com arrow functions!
 
   Parâmetros:
     - Uma string;
@@ -15,6 +10,9 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (name) => ({ // recebe como parâmetro um nome,
+  name, // name, contendo o nome passado como parâmetro;
+  feedback: () => 'Eita pessoa boa!', // feedback, contendo uma função que retorna a frase 'Eita pessoa boa!' ao ser chamada.
+});
 
 module.exports = createStudent;
