@@ -76,7 +76,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // ```
     const objetoRetornado4 = createMenu({ food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } });
-    assert.deepStrictEqual(objetoRetornado4.consumption, []);
+    assert.deepStrictEqual(objetoRetornado4.consumption(), []);
     // objetoRetornado.consumption // Retorno: []
     // ```
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
@@ -86,17 +86,19 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     const objetoRetornado5 = createMenu({ food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } });
     objetoRetornado5.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado5.consumption, ['coxinha'])
+    assert.deepStrictEqual(objetoRetornado5.consumption(), ['coxinha'])
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
-    // objetoRetornado.order("coxinha");
-    // objetoRetornado.order("agua");
-    // objetoRetornado.order("sopa");
-    // objetoRetornado.order("sashimi");
+    const objetoRetornado6 = createMenu({ food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } });
+    objetoRetornado6.order('coxinha');
+    objetoRetornado6.order('agua');
+    objetoRetornado6.order('sopa');
+    objetoRetornado6.order('sashimi');
+    assert.deepStrictEqual(objetoRetornado6.consumption(), ['coxinha', 'agua', 'sopa', 'sashimi'])
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
     // Agora faça o TESTE 7 deste arquivo.

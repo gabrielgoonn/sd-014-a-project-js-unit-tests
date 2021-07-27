@@ -81,13 +81,12 @@
 
 const createMenu = (object) => {
   let menu;
-  if (object) menu = menu;
-  else return {
+  if (object) menu = object;
+  const currentConsuption = [];
+  return {
     fetchMenu: () => menu,
-    order: () => false,
-    consumption: () => {
-      const currentConsuption = [];
-    },
+    order: (item) => currentConsuption.push(item),
+    consumption: () => currentConsuption,
     pay: () => false,
   };
 };
