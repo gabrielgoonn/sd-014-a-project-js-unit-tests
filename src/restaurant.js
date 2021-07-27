@@ -83,6 +83,10 @@ const restaurant = {};
 
 const orderFromMenu = (request) => restaurant.consumption.push(request);
 
-const createMenu = (obj) => restaurant[{ fetchMenu: () => obj, consumption: [], order: (request) => orderFromMenu(request) }];
+const createMenu = (obj) => {
+  Object.assign(restaurant, { fetchMenu: () => obj, consumption: [], order: (request) => orderFromMenu(request) });
+
+  return restaurant;
+};
 
 module.exports = createMenu;
