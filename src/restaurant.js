@@ -81,6 +81,4 @@
 
 const createMenu = () => ({ fetchMenu: () => {} });
 
-console.log(typeof createMenu().fetchMenu);
-
 module.exports = createMenu;
