@@ -16,11 +16,11 @@
 */
 
 const createStudent = (nome) => {
-  const fb = () => `Eita pessoa boa!`;
+  const fb = () => 'Eita pessoa boa!';
   const estudante = {
     name: nome,
     feedback: fb,
-  }
+  };
   return estudante;
 };
 
