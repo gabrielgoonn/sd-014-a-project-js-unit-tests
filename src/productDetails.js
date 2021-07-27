@@ -38,5 +38,5 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-
+console.log(Object.values(productDetails('arroz', 'feijão')[0].details.productId));
 module.exports = productDetails;
