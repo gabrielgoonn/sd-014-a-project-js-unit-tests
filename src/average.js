@@ -19,9 +19,8 @@ const average = (num) => {
   for (let x = 0; x < num.length; x += 1) {
     if (typeof (num[x]) !== 'number') {
       return undefined;
-    } else {
-      valor += num[x];
     }
+      valor += num[x];
   }
   valor = Math.round(valor / num.length);
   return valor;
