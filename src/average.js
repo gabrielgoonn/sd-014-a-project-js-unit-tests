@@ -13,10 +13,10 @@
 */
 
 const average = (array) => {
-  if (array.length === 0 || !array.every(Number.isFinite)) {
+  if (array.length === 0 || !array.every(Number.isFinite)) { // Se array vazio ou não todos os elementos são números, retorna undefined
     return undefined;
   }
-  return Math.round(array.reduce((total, value) => total + value) / array.length);
+  return Math.round(array.reduce((total, value) => total + value) / array.length); // Retorna a média dos valores
 };
 
 module.exports = average;
