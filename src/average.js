@@ -12,16 +12,15 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+const numbers = require('./numbers');
+
 const average = (array) => {
   let somaTudo = 0;
-  let media = undefined;
-  for (let index = 0; index < array.length; index += 1) {    
-    if (typeof (array[index]) === 'number') {
+  let media;
+  if (numbers(array)) {
+    for (let index = 0; index < array.length; index += 1) {
       somaTudo += array[index];
       media = Math.round(somaTudo / (array.length));
-    } else {
-      media = undefined;
-      index = array.length;
     }
   }
   return media;
