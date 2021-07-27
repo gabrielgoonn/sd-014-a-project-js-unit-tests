@@ -130,7 +130,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-    assert.strictEqual(fourthMenu.pay(), somaDosPreçosDosPedidos);
+    assert.strictEqual(fourthMenu.pay(), 12.87);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
