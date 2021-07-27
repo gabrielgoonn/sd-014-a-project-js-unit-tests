@@ -16,20 +16,22 @@
 */
 const assert = require('assert');
 
-const feedback = () => 'Eita pessoa boa!';
+const feed = () => 'Eita pessoa boa!';
 const createStudent = (string) => {
   let estudante = {
-    name: string,
-    feedback,
+    name: `${string}`,
+    feedback: feed,
   };
   let estudante2 = {
-    name: string,
-    feedback,
+    name: `${string}`,
+    feedback: feed,
   };
   let estudante3 = {
-    name: string,
-    feedback,
+    name: `${string}`,
+    feedback: feed,
   };
-  return estudante + estudante2 + estudante3;
+  
+  return estudante;
 };
+
 module.exports = createStudent;
