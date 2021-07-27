@@ -13,20 +13,18 @@
 */
 
 const average = (array) => {
-  let averageOutput = 0;
-  if (array.length === 0){
-    return undefined
+  let averageNumber = 0;
+  if (array.length === 0) {
+    return undefined;
   }
   for (let index = 0; index < array.length; index += 1) {
-    if (typeof array[index] !== 'number' ){
+    if (typeof array[index] !== 'number') {
       return undefined;
-    } 
-    averageOutput += array[index];
+    }
+    averageNumber += array[index];
   }
-  averageOutput = averageOutput / array.length;
-  return Math.round(averageOutput);
+  const averageOutput = averageNumber / array.length;
+  return Math.round(averageOutput); // Math.round arredonda o numero fracionado respeitando as regras de arredondamento.
 };
 
 module.exports = average;
-
-
