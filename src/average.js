@@ -13,5 +13,6 @@
 */
 
 const average = () => {};
+const average = to fudido
 
 module.exports = average;
