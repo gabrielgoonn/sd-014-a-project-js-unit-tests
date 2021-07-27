@@ -19,6 +19,19 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const soma = (num1, num2) => num1 + num2;
+const multiplica = (num1, num2) => num1 * num2; 
+const divide = (num1, num2) => Math.floor(num1 / num2); 
+const subtrai = (num1, num2) => num1 - num2; 
+
+const calculator = {
+  add: soma,
+  mult: multiplica,
+  div: divide,
+  sub: subtrai,
+};
 
 module.exports = calculator;
+
+/* Utilizei o método Math.floor() encontrado nesse site: 
+https://backefront.com.br/como-arredondar-para-cima-valor-javascript/ */
