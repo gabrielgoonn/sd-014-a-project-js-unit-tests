@@ -29,5 +29,4 @@ const average = (array) => {
 };
 console.log(average([14,3,5]))
 
-
 module.exports = average;
