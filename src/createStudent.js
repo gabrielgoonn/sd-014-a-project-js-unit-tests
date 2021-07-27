@@ -14,20 +14,22 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-const assert = require('assert')
+const assert = require('assert');
+
+const feedback = () => 'Eita pessoa boa!';
 const createStudent = (string) => {
   let estudante = {
     name: string,
-    feedback(){return 'Eita pessoa boa!'}
-  }
+    feedback,
+  };
   let estudante2 = {
     name: string,
-    feedback(){return 'Eita pessoa boa!'}
-  }
+    feedback,
+  };
   let estudante3 = {
     name: string,
-    feedback(){return 'Eita pessoa boa!'}
-  }
-  return estudante, estudante2, estudante3
+    feedback,
+  };
+  return estudante + estudante2 + estudante3;
 };
 module.exports = createStudent;
