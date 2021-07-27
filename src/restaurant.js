@@ -85,7 +85,9 @@ const createMenu = (object) => {
   else return {
     fetchMenu: () => menu,
     order: () => false,
-    consumption: () => false,
+    consumption: () => {
+      const currentConsuption = [];
+    },
     pay: () => false,
   };
 };
