@@ -12,6 +12,21 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
-console.log('bora nessa fml');
+const average = (array) => {
+  let counter = 0;
+  if (array.length === 0){
+    return undefined;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
+    counter = counter + array[index];
+  }
+  return Math.round(counter / array.length);
+};
+
+
+
 module.exports = average;
+

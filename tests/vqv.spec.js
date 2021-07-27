@@ -18,8 +18,8 @@ const vqv = require('../src/vqv.js');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-describe('3 - Implemente a função `vqv`', () => {
-  it('Verifica se a função `vqv` retorna a frase esperada com nome e idade', () => {
+/*describe('3 - Implemente a função `vqv`', () => {
+  it('Verifica se a função `vqv` retorna a frase esperada com nome e idade', () => {*/
     assert.strictEqual(typeof vqv, 'function');
     assert.strictEqual(typeof vqv('Tunico', 30), 'string');
     assert.strictEqual(
@@ -44,5 +44,5 @@ describe('3 - Implemente a função `vqv`', () => {
         '#VQV!',
     );
     assert.strictEqual(vqv(), undefined);
-  });
-});
+//  });
+//});
