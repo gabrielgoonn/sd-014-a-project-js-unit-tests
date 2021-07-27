@@ -20,6 +20,7 @@ const createStudent = (name) => ({
   name: name,
   feedback: fraseFeedback,
   });
+// console.log(createStudent('Leandrão, o Lobo Solitário'));
 module.exports = createStudent;
 
 // referência: estudei o projeto do aluno da turma 13 Jackson Santana.
