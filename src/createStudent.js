@@ -15,6 +15,9 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (name) => ({
+  name, // quando a chave e o valor é igual, dentro de uma arrow function, nao precisa repetir os dois.
+  feedback: () => 'Eita pessoa boa!',
+});
 
 module.exports = createStudent;
