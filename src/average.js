@@ -11,7 +11,26 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
-const average = () => {};
+const average = (array) => {
+  // Retorna undefined caso o array esteja 'vazio'
+  if (array.length === 0) { return undefined; }
+  // Percorre todo o array e retorna undefined caso encontre um objeto diferente de 'number'
+  for (let index in array) {
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
+  }
+  let soma = 0;
+  let media = 0;
+  // Soma todos os valores do array
+  for (let index = 0; index < array.length; index += 1) {
+    soma += array[index];
+  }
+  // Media recebe soma dividido pela quantidade de índices no array
+  media = soma / array.length;
+  // Retorna o valor de media arredondando para o inteiro mais próximo
+  // Source: https://www.w3schools.com/jsref/jsref_round.asp
+  return Math.round(media);
+};
 
 module.exports = average;
