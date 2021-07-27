@@ -38,8 +38,10 @@ Retorno:
 
 const characters = {
   arya: {
+    // eslint-disable-next-line sonarjs/no-duplicate-string
     name: 'Arya Stark',
     class: 'Rogue',
+    // eslint-disable-next-line sonarjs/no-duplicate-string
     phrases: ['Not today', 'A girl has no name.'],
   },
   brienne: {
