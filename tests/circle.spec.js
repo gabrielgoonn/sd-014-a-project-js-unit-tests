@@ -42,5 +42,6 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     let circulo = circle(3);
     circulo.area = areaCirculo;
     assert.deepStrictEqual(circulo, { radius: 3, area: 28.26, circumference: 18.84 });
+    //  Esse é o requsito 4.
   });
 });
