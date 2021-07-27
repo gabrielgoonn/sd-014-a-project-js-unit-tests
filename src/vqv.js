@@ -23,9 +23,8 @@ trabalho na Trybe e mando muito em programação!
 #VQV!`;
   if (nome && idade) {
     return retornado;
-  } else {
-    return undefined;
   }
+  return undefined;
 };
 
 module.exports = vqv;
