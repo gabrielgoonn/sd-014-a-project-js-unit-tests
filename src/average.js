@@ -19,11 +19,10 @@ const average = (array) => {
   let media = 0;
   let total = 0;
   for (let index = 0; index < array.lenght; index += 1) {
-    let numero = array[index];
     if (typeof (numero) !== 'number') {
       return undefined;
     }
-    total += numero;
+    total += array[index];
   }
   media = Math.ceil((total / (array.lenght)));
   return media;
