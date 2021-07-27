@@ -25,6 +25,7 @@ const average = (array) => {
     }
   }
   return Math.round(somatorio / array.length);
+  // referência: https://www.w3schools.com/jsref/jsref_obj_math.asp
 };
 
 module.exports = average;
