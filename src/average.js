@@ -22,6 +22,7 @@ const average = (numbers) => {
   const result = (numbers.reduce((sum, current) => sum + current, 0)) / length;
   return Math.round(result);
 };
+
 module.exports = average;
 
 console.log(average([]));
