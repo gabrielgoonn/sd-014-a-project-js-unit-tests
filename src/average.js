@@ -11,22 +11,29 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+function vamosSomar(soma, array) {
+  if (soma !== 0) {
+    let media = soma / array.length;
+    return Math.round(media);
+  }
+  return 0;
+}
+
+function verArray(array) {
+  let soma = 0;
+  for (let i = 0; i < array.length; i += 1) {
+    if ((array.length > 0) && (array[i] !== (' ')) && (typeof array[i] === 'number')) {
+      soma += array[i];
+    } else {
+      return undefined;
+    }
+  }
+  return vamosSomar(soma, array);
+}
 
 const average = (array) => {
-  let soma = 0;
   if (array.length > 0) {
-    for (let i = 0; i < array.length; i += 1) {
-      if ((array.length > 0) && (array[i] !== (' ')) && (typeof array[i] === 'number')) {
-        soma += array[i];
-      } else {
-        return undefined;
-      }
-    }
-    if (soma !== 0) {
-      let media = soma / array.length;
-      return Math.round(media);
-    }
-    return 0;
+    return verArray(array);
   }
   return undefined;
 };
