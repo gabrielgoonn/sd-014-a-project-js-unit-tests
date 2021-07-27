@@ -36,7 +36,18 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
     // Teste que os dois productIds terminam com 123.
-    assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara'), 'array');
 
+    //declarei const para fazer o typeof
+    //Array.isArray(obj) https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray 
+
+    const produto = productDetails('firstProduct', 'secondProduct');
+
+    assert.strictEqual(Array.isArray(produto), true);
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
+    assert.strictEqual(typeof produto[0], 'object');
+    assert.strictEqual(typeof produto[1], 'object');
+    assert.notStrictEqual(produto[0], produto[1]);
+    assert.strictEqual(produto[0].details.productId.endsWith('123'), true);
+    assert.strictEqual(produto[1].details.productId.endsWith('123'), true);
   });
 });
