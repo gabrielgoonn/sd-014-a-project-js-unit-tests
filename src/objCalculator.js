@@ -20,5 +20,17 @@
 */
 
 const calculator = {};
+const add = (n1, n2) => n1 + n2;
+const mult = (n1, n2) => n1 * n2;
+const div = (n1, n2) => Math.floor(n1 / n2);
+const sub = (n1, n2) => n1 - n2;
+
+calculator.add = add;
+calculator.mult = mult;
+calculator.div = div;
+calculator.sub = sub;
+
+// Função 'Math.floor() faz com que o valor decimal seja arredondado para o inteiro mais baixo'
+// Informação encontrada no site https://www.w3schools.com/jsref/jsref_floor.asp
 
 module.exports = calculator;
