@@ -12,7 +12,6 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-
   const average = (array) => {
     let soma = 0;
     if (array.length === 0) {
