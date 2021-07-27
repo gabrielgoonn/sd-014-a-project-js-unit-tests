@@ -22,8 +22,8 @@
 const calculator = {
   add: (a, b) => a + b, // Adiciona dois números
   mult: (a, b) => a * b, // Multiplica dois números
-  div: (a, b) => a / b | 0, // Divide dois números e arredonda para baixo
-  sub: (a, b) => a - b // Subtrai dois números
+  div: (a, b) => Math.floor(a / b), // Divide dois números e arredonda para baixo
+  sub: (a, b) => a - b, // Subtrai dois números
 };
 
 module.exports = calculator;
