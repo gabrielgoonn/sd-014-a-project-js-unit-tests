@@ -11,7 +11,8 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
+// Ref: 
+// link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 const average = (array) => {
   let somaAll = 0;
   let arrayLength = 0;
