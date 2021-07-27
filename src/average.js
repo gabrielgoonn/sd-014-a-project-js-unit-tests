@@ -30,6 +30,7 @@ const average = (array) => {
   return Math.round(sumValues / array.length);
 };
 
+// testes.
 // const ex1 = [1];
 // const ex2 = [1, 2, 3, 4, 5];
 // const output = average(ex1);
