@@ -22,7 +22,7 @@
 const calculator = {
   add: (num1, num2) => num1 + num2, 
   mult: (num1, num2) => num1 * num2, 
-  div: (num1, num2) => Math.floor(num1 / num2), 
+  div: (num1, num2) => Math.floor(num1 / num2), // 	A Number, representing the nearest integer when rounding downwards Source: https://www.w3schools.com/jsref/jsref_floor.asp
   sub: (num1, num2) => num1 - num2, 
 };
 console.log(calculator.div(5, 2));
