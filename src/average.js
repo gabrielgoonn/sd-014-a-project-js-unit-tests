@@ -13,5 +13,5 @@
 */
 
 const average = () => {};
-
+// eita
 module.exports = average;
