@@ -9,13 +9,14 @@
     - numbers([2, 'errado', 5]); // Retorna: false
 */
 
-const numbers = (myArray) => {
+const numbers = (myArray) => {  
   for (let i = 0; i < myArray.length; i += 1) {
     if (typeof myArray[i] !== 'number') {
-      return false;
+      return undefined;
     }
   }
-  return true;
+  let msg = 'boa';
+  return msg;
 };
-
+console.log(numbers([2, 2, 3]));
 module.exports = numbers;
