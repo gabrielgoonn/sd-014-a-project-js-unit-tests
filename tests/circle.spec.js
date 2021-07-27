@@ -38,6 +38,8 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.strictEqual(circle(3).circumference, 18.84);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    // Suporte do colega Thiago Almeida, que deu a sujestão do parseFloat em uma conversa privada
+    // Toda a ideia de cirar o Object.values e altera-lo partiu de mim. 
     const valuesObject = Object.values(circle(3));
     valuesObject[1] = parseFloat(circle(3).area.toPrecision(8));
     assert.deepStrictEqual(valuesObject, [3, 28.26, 18.84]);
