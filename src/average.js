@@ -13,7 +13,6 @@
 
 const average = (numRef) => {
   if (Object.keys(numRef).length === 0) { return console.log('undefined'); }
-  let assert = require('assert');
   let numDeElemento = 0;
   let valorDoNumRef = 0;
   let somaResult = 0;
