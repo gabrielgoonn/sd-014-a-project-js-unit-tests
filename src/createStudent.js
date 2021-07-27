@@ -14,7 +14,6 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-
-const createStudent = () => {};
-
+const feedback = () => 'Eita pessoa boa!';
+const createStudent = (estudante) => ({ name: estudante, feedback });
 module.exports = createStudent;
