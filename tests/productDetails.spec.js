@@ -36,6 +36,12 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
+    const obj1 = productDetails[0];
+    const obj2 = productDetails[1];
+    assert.notStrictEqual((obj1,obj2),true);
     // Teste que os dois productIds terminam com 123.
+    assert.strictEqual(productDetails('pedro','joao')[0].details.productId, 'pedro123');
+    assert.strictEqual(productDetails('pedro','joao')[1].details.productId, 'joao123');
+
   });
 });
