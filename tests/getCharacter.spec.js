@@ -50,11 +50,11 @@ describe('9 - Implemente os casos de teste para a função `getCharacter`', () =
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     assert.strictEqual(getCharacter(), undefined)
     // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
-    assert.strictEqual(getCharacter('arya').name, 'Arya Stark')
+    assert.strictEqual(getCharacter('Arya').name, 'Arya Stark')
     // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-    assert.strictEqual(getCharacter('brienne').name, 'Brienne Tarth')
+    assert.strictEqual(getCharacter('Brienne').name, 'Brienne Tarth')
     // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-    assert.strictEqual(getCharacter('melissandre').name, 'Melissandre')
+    assert.strictEqual(getCharacter('Melissandre').name, 'Melissandre')
     // Teste se a função se os parâmetros não são Case Sensitive.
     assert.strictEqual(getCharacter('arya').name, 'Arya Stark')
     assert.strictEqual(getCharacter('ARYA').name, 'Arya Stark')
