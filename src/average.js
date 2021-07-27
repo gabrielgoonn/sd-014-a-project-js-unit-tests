@@ -13,7 +13,17 @@
 */
 
 const average = (valores) => {
-
+  let resultado = 0;
+  if (valores.length < 1) {
+    return undefined;
+  }
+  for (let key of valores) {
+    if (Number.isInteger(key)) {
+      resultado += key;
+    } else return undefined;
+  }
+  resultado = Math.round(resultado / valores.length);
+  return resultado;
 };
 
 module.exports = average;
