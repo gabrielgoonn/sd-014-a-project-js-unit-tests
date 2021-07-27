@@ -12,8 +12,22 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  // iniciar o código da função
+const average = (array) => {
+  // inicializa a variavel para somar os valores de cada indice do array
+  let soma = 0;
+  // verifica se o array está vazio ou se tme pelo menos dois numeros
+  if (array.length === 0 || array.length < 2) {
+    return undefined;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    soma += array[index];
+    // verifica se o tipo de cada valor é um número e se o array não está vazio
+    if (typeof (array[index]) !== 'number') {
+      return undefined;
+    }
+  }
+  // retorna a soma dos numeros dividido pela quantida de indices e arredonda para cima ou para baixo
+  return Math.round(soma / array.length);
 };
-
+// console.log(average([-11, 2, 5]));
 module.exports = average;
