@@ -16,12 +16,10 @@
 */
 
 const createStudent = (string) => {
-  let estudante = new Object;
-  estudante["name"] = string;
-  estudante.feedback = () => {
-    return 'Eita pessoa boa!'
-  };
-  return estudante
+  let estudante = new Object();
+  estudante.name = string;
+  estudante.feedback = () => { return 'Eita pessoa boa!'; };
+  return estudante;
 };
 
 // function createStudent (string) {
@@ -33,6 +31,5 @@ const createStudent = (string) => {
 //   }
 //   return estudante;
 // };
-
 
 module.exports = createStudent;
