@@ -24,8 +24,7 @@
   ]
 */
 
-const productDetails = (firstProduct, secondProduct) => [
-  {
+const productDetails = (firstProduct, secondProduct) => [{ //   Dadas duas strings que representam nomes de produtos,
     name: firstProduct,
     details: {
       productId: `${firstProduct}123`,
@@ -37,6 +36,6 @@ const productDetails = (firstProduct, secondProduct) => [
       productId: `${secondProduct}123`,
     },
   },
-];
+]; //  retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
 
 module.exports = productDetails;
