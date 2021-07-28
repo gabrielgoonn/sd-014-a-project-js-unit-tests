@@ -15,6 +15,14 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+// De onde aprendi a colocar o arrow function em um object key: 
+// https://stackoverflow.com/questions/36717376/arrow-function-in-object-literal
 
+const createStudent = (studentName) => {
+  const studentObject = { 
+  name: studentName,
+  feedback: () => 'Eita pessoa boa!',
+};
+return studentObject;
+};
 module.exports = createStudent;
