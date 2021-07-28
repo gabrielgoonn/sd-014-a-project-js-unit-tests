@@ -78,8 +78,8 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-//  { fetchMenu: () => objetoPassadoPorParametro }.
-const createMenu = (ob) => ( { fetchMenu: () => {return ob} } );
+
+const createMenu = (ob) => ({ fetchMenu: () => ob });
 
 module.exports = createMenu;
 
@@ -95,5 +95,4 @@ assert.deepStrictEqual(typeof objetoRetornado, 'object');
 assert.deepStrictEqual(Object.keys(objetoRetornado)[0], 'fetchMenu');
 assert.deepStrictEqual(typeof(Object.values(objetoRetornado)[0]), 'function');  */
 
-//console.log(Object.keys(objetoRetornado.fetchMenu));
 console.log((objetoRetornado.fetchMenu()));
