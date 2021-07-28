@@ -12,6 +12,25 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+// Criando a função, passando um array como parametro e fazendo trativa de erro se o tamanho do array for 0 retorna undefined
+const average = (array) => {
+  let ResultadoTotalSoma = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
+
+// fazendo um loop com o tamanho do array e a soma total que tem dentro de cada array, e fazendo uma tratativa de erro se for diferente de numero retorna undefined;
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
+    ResultadoTotalSoma += array[index];
+  }
+
+  // Colocando a media da soma total que tem dentro do array divido pelo tamanho total de cada numero dentro do array e a arrendondando para inteiro com a função Math.round.
+  // Referência w3schools: https://www.w3schools.com/jsref/jsref_round.asp
+  let media = Math.round(ResultadoTotalSoma / array.length);
+  return (media);
+};
 
 module.exports = average;
