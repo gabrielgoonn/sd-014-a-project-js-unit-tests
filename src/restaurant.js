@@ -97,6 +97,7 @@ const createMenu = (objetoMenu) => {
   const objeto = {
     fetchMenu: () => objetoMenu, // retorna o proprio objeto como entrada
     consumption: () => [], // funcao com o valor inical array vazio;
+    order: (pedido) => this.consumption.push(pedido), // funcao que adiciona string ao array da linha superior
   };
 };
 
