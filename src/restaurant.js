@@ -79,6 +79,34 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
+const menu = {
+  food: {
+    coxinha: 3.9,
+    sopa: 9.9,
+    Lasanha: 20,
+  },
+  drink: {
+    agua: 3.9,
+    cerveja: 6.9,
+  },
+};
+
+// consumo = Object.keys(); //  // Retorno: ['coxinha']
+// pay = Object.values(); // Retorno: 3.9
 const createMenu = () => {};
 
-module.exports = createMenu;
+const pay = (obj, arr) => { // recebe um objeto e o array, percorre, para somar
+  let sum = 0;
+  for (let iten of obj.arr) {
+ if (Object.keys(obj.arr.food).includes(`${iten}`)) { // verifica se existe
+    sum += obj.arr.food[`${iten}`];
+  }
+  if (Object.keys(obj.arr.drink).includes(`${iten}`)) { // verifica se existe
+    sum += obj.arr.drink[`${iten}`];
+  }
+}
+  if (sum === 0) { // Se nao somar nada, retorna, nao definido
+    return undefined;
+  }
+  return sum * 1.1;
+};
