@@ -16,6 +16,15 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+// Criando a função passando nome e idade como parametro e fazendo uma estrutura de decisão com os parametros passados e retornando a mensagem, e se for diferente de string e number return undefined. 
+const vqv = (nome, idade) => {
+  if (typeof (nome) === 'string' && typeof (idade) === 'number') {
+  return `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  }
+  return undefined;
+};
 
 module.exports = vqv;
