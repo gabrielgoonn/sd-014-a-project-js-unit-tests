@@ -36,6 +36,8 @@ Retorno:
 }
 */
 
+const assert = require('assert');
+
 const characters = {
   arya: {
     name: 'Arya Stark',
@@ -67,5 +69,5 @@ const getCharacter = (name) => {
 
   return undefined;
 };
-
+ 
 module.exports = getCharacter;
