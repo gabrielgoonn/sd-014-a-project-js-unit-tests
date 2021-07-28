@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { isArray } = require('util');
 const productDetails = require('../src/productDetails');
 
 /*
@@ -28,13 +29,13 @@ const productDetails = require('../src/productDetails');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-// describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
-//   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
+describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
+  it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     
     // ESCREVA SEUS TESTES ABAIXO:
 
     // Teste que o retorno da função é um array.
-    // assert.deepStrictEqual(typeof productDetails('string1', 'string2'), 'array') xxx
+    assert.deepStrictEqual(Array.isArray(productDetails('string1', 'string2')), true)
 
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.deepStrictEqual(Object.keys(productDetails('string1', 'string2')).length, 2)
@@ -46,7 +47,7 @@ const productDetails = require('../src/productDetails');
     assert.notDeepStrictEqual(productDetails('string1'), productDetails('string2'))
 
     // Teste que os dois productIds terminam com 123.
-    // xxx
+    assert.ok((productDetails('string1', 'string2').includes('123'), true))
 
-//   });
-// });
+  });
+});
