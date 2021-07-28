@@ -39,17 +39,4 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
-let agora = productDetails('pao', 'arroz');
-console.log(agora[0].details.productId);
-let opa = agora[0].details.productId
-console.log(opa.endsWith('123'));
-let bora = Object.values(productDetails('gel', 'mascara'));
-
-//console.log(bora)
-//console.log(bora.endsWith('mascara123'));
-
-console.log(Object.entries(productDetails('ok','yes')))
-console.log(productDetails.name)
-console.log(productDetails.length);
-
 module.exports = productDetails;
