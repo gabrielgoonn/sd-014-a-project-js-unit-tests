@@ -65,6 +65,27 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
         phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
       },
     };
+    const obj2 = {
+      arya: {
+        name: 'arya stark',
+        class: 'rogue',
+        phrases: ['not today', 'a girl has no name.'],
+      },
+      brienne: {
+        name: 'brienne tarth',
+        class: 'knight',
+        phrases: ['im no lady, your grace.', 'i, brienne of tarth, sentence you to die.'],
+      },
+      melissandre: {
+        name: 'melissandre',
+        class: 'necromancer',
+        phrases: ['death by fire is the purest death.', 'for the night is dark and full of terrors.'],
+      },
+    };
+
+    // const lowerCaseObj = charactersObj.toLowerCase();
+
+    // console.log(lowerCaseObj)
 
     const characterFunc = getCharacter(charactersObj);
 
@@ -74,6 +95,7 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     assert.strictEqual(characterFunc.getCharacter(charactersObj.brienne), charactersObj.brienne);
     assert.strictEqual(characterFunc.getCharacter(charactersObj.melissandre), charactersObj.melissandre);
     assert.notStrictEqual(characterFunc.getCharacter(charactersObj.melissandre), undefined);
+    assert.strictEqual(characterFunc.getCharacter(obj2), obj2);
     // Teste se a função se os parâmetros não são Case Sensitive.
   });
 });

@@ -30,21 +30,38 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-   // ESCREVA SEUS TESTES ABAIXO:
+    // ESCREVA SEUS TESTES ABAIXO:
+   // assert.fail();
     const obj1 = {
       name: 'Borracha',
       details: {
-        productId: 'descricao 1',
+        productId: 'descricao123',
     },
   }
     const obj2 = {
       name: 'lapis',
       details: { 
-        productId: 'descricao2',
+        productId: 'descricao123',
     },
-  }
+  } 
+    //função para fazer possibilitar o teste se as productIds terminam com 123
+    const objSlice1 = productDetails()[0].details.productId.slice(-3); 
+    const objSlice2 = productDetails()[1].details.productId.slice(-3); 
+    const test123 = () => (objSlice1 === '123' && objSlice2 === '123') ? true:false;
+   
+    //testes
+    assert.strictEqual(productDetails(obj1, obj2) instanceof Array, true);
     assert.strictEqual(typeof productDetails(), 'object');
-    assert.notDeepStrictEqual(obj1, obj2);
+    assert.strictEqual(productDetails().length, 2);
+    assert.notDeepStrictEqual(productDetails(obj1), productDetails(obj2));
+    assert.notDeepStrictEqual(productDetails(obj1), productDetails(obj2));
+    assert.strictEqual(test123(), true);
+
+    // Teste que o retorno da função é um array.
+    // Teste que o array retornado pela função contém dois itens dentro. ok
+    // Teste que os dois itens dentro do array retornado pela função são objetos. ok
+    // Teste que os dois objetos são diferentes entre si. ok
+    // Teste que os dois productIds terminam com 123.
   });
 });
 
