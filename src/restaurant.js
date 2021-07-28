@@ -93,19 +93,12 @@ const createMenu = (objects) => {
 
   obj.order = order;
 
-  // eslint-disable-next-line sonarjs/cognitive-complexity
   const pay = () => {
     let price = 0;
     for (let i = 0; i < obj.consumption.length; i += 1) {
-      if (obj.consumption[i] === 'coxinha') {
-        price += 3.90;
-      } else if (obj.consumption[i] === 'sanduiche') {
-        price += 9.90;
-      } else if (obj.consumption[i] === 'agua') {
-        price += 3.90;
-      } else if (obj.consumption[i] === 'cerveja') {
+      if (obj.consumption[i] === 'cerveja') {
         price += 6.90;
-      } else if (obj.consumption[i] === 'sopa') {
+      } else if (obj.consumption[i] === 'sanduiche' || obj.consumption[i] === 'sopa') {
         price += 9.90;
       }
       }
