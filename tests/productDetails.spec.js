@@ -38,7 +38,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     
     // ESCREVA SEUS TESTES ABAIXO:
     assert(Array.isArray(expected));// Teste que o retorno da função é um array.
-    //Array.isArray(obj) faz a verificação se o objeto é um array
+    //Array.isArray() faz a verificação se o objeto é um array
     assert.strictEqual(expected.length, 2);// Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual(typeof expected, 'object');// Teste que os dois itens dentro do array retornado pela função são objetos.
     assert(objTwo !== objOne);// Teste que os dois objetos são diferentes entre si.
