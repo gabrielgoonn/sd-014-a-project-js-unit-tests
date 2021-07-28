@@ -47,7 +47,9 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
 
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepStrictEqual(item1, item2, 'os dois itens retornados por productDetails não podem ser iguais');
-    
+
     // Teste que os dois productIds terminam com 123.
+    const terminaCom123 = (item) => item.details.productId.match(/123$/) !== null;
+    assert.ok(terminaCom123(item1) && terminaCom123(item2), 'as ids dos produtos retornados por productDetails precisam terminar com 123');
   });
 });
