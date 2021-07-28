@@ -34,7 +34,6 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     assert.ok(circle() === undefined, 'Se a função não recebe parâmetro, deve retornar undefined')
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    console.log(typeof circle(2).circumference)
     assert.ok(circle(2).circumference === 12.56, 'Verifica se a circunferência é calculada corretamente');
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.ok(circle(3).area === 28.26, 'Verifica se área é calculada corretamente');
