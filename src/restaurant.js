@@ -80,7 +80,7 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (param) => {
-  const parametro = param;
+  let valor = 0;
   const menuCompleto = {
     fetchMenu: () => param,
     consumption: [],
@@ -90,7 +90,6 @@ const createMenu = (param) => {
     pay: () => {
       const type = menuCompleto.consumption;
       const typeFood = Object.keys(menuCompleto.fetchMenu());
-      let valor = 0;
       const objeto = menuCompleto.fetchMenu();
       for (let indice = 0; indice < typeFood.length; indice += 1) {
         for (let x = 0; x < type.length; x += 1) {
