@@ -32,12 +32,16 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
+    
+    const test = productDetails('oi', 'oi');
 
+    // Teste que o retorno da função é um array.
     // Inspiração: https://stackoverflow.com/questions/4775722/how-to-check-if-an-object-is-an-array
-    assert.ok(Array.isArray(productDetails('oi', 'oi')), 'productDetails deve retornar uma array');
+    assert.ok(Array.isArray(test), 'productDetails deve retornar uma array');
 
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.strictEqual(test.length, 2, 'o array de productDetails deve ter dois itens');
+
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
     // Teste que os dois productIds terminam com 123.
