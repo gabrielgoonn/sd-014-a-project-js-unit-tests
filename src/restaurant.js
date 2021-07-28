@@ -46,7 +46,7 @@
 */
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-const createMenu = (menu) => ({ fetchMenu: () => menu, consumption: [] });
+// const createMenu = (menu) => ({ fetchMenu: () => menu, consumption: [] });
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -64,13 +64,21 @@ const createMenu = (menu) => ({ fetchMenu: () => menu, consumption: [] });
 // - Definir o objeto que a `createMenu()` retorna, mas separadamente 
 // - E, depois, definir a função que será atribuída a `order`.
 // ```
-// const restaurant = {}
+const restaurant = {};
 //
-// const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
+const createMenu = (myMenu) => {
+  restaurant.fetchMenu = () => myMenu;
+  restaurant.consumption = [];
+  return restaurant;
+};
 //
 // const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
 // // Essa função deve ser associada à chave `order` de `restaurant`
-// ```
+const order = (request) => {
+  restaurant.consumption.push(request);
+};
+
+restaurant.order = order;
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
