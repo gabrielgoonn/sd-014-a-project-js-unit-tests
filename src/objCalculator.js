@@ -30,7 +30,7 @@ calculator.mult = vezes;
 calculator.sub = less;
 calculator.div = share;
 
-console.log(calculator.div(3, 2));
+// console.log(calculator.div(3, 2));
 module.exports = calculator;
 
-//referencia de arredondamento para baixo Math.floor https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+// referencia de arredondamento para baixo Math.floor https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
