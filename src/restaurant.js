@@ -93,7 +93,12 @@ const menu = {
 
 // consumo = Object.keys(); //  // Retorno: ['coxinha']
 // pay = Object.values(); // Retorno: 3.9
-const createMenu = () => {};
+const createMenu = (objetoMenu) => {
+  const objeto = {
+    fetchMenu: () => objetoMenu, // retorna o proprio objeto como entrada
+    consumption: () => [], // funcao com o valor inical array vazio;
+  };
+};
 
 function verifica(e) {
   let sum = 0;
