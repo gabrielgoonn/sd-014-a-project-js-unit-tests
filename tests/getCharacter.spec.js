@@ -71,6 +71,6 @@ describe('9 - Implemente os casos de teste para a função `getCharacter`', () =
     // Teste se a função se os parâmetros não são Case Sensitive.
     assert.notDeepStrictEqual(getCharacter('brienne'), undefined);
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
-    assert.deepStrictEqual(getCharacter('matheus'), undefined);es
+    assert.deepStrictEqual(getCharacter('matheus'), undefined);
   });
 });
