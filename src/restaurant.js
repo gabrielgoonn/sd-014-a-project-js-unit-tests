@@ -92,8 +92,8 @@ const createMenu = (obj) => {
       let sum = 0;
       const prices = {};
       Object.assign(prices, obj.food, obj.drink);
-      for (let i = 0; i < restaurant.consumption.length; i += 1) {
-        sum += prices[restaurant.consumption[i]];
+      for (const item of restaurant.consumption) {
+        sum += prices[item];
       }
       return sum + sum * 0.1;
     },
