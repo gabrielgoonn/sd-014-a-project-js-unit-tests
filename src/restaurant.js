@@ -69,6 +69,11 @@ const restaurant = {};
 const createMenu = (myMenu) => {
   restaurant.fetchMenu = () => myMenu;
   restaurant.consumption = [];
+  restaurant.pay = () => {
+    const foodTotal = restaurant.consumption.filter((order) => Object.keys(myMenu.food).includes(order)).map((order) => myMenu.food[order]).reduce((sum, current) => sum + current, 0);
+    const drinkTotal = restaurant.consumption.filter((order) => Object.keys(myMenu.drink).includes(order)).map((order) => myMenu.drink[order]).reduce((sum, current) => sum + current, 0);   
+    return (foodTotal + drinkTotal);
+  };
   return restaurant;
 };
 //
