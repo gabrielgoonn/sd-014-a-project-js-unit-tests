@@ -44,22 +44,8 @@ Retorno:
 OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-describe("9 - Implemente os casos de teste para a função `getCharacter`", () => {
-  it("Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.", () => {
-    // assert.fail();
-=======
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    assert.fail();
->>>>>>> 3086ad1670866e0a0b2de5d7c0531a9b2496bdd1
-=======
-describe("9 - Implemente os casos de teste para a função `getCharacter`", () => {
-  it("Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.", () => {
-    // assert.fail();
-
->>>>>>> 57973eb238b85230262dc9b91dcdd8946248235c
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     assert.strictEqual(getCharacter(), undefined);
