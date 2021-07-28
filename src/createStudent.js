@@ -15,6 +15,7 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
+// Requisito 5
 const createStudent = (nome) => {  
   let feedback = () => 'Eita pessoa boa!';
   let estudante = {
