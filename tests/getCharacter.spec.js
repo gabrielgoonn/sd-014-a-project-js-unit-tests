@@ -2,9 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
-const {
-  getEventListener
-} = require('events');
+
 const getCharacter = require('../src/getCharacter');
 
 /*
