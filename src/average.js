@@ -12,6 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+// Requisito 1
 const average = (array) => {
   let sum = 0;
   const sizeArray = array.length;  
