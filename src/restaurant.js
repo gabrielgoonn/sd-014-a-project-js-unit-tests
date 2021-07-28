@@ -82,7 +82,7 @@
 let restaurant = {};
 
 const orderFromMenu = (request) => {
-  restaurant.consumption = [request];
+  restaurant.consumption.push(request);
   return request;
 };
 
