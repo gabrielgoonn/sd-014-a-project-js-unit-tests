@@ -50,7 +50,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui, 
     // mas não necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
-    const objetoRetornado = createMenu();
+    const objetoRetornado = createMenu({ food: {}, drink: {} });
     assert.deepStrictEqual(typeof objetoRetornado, 'object');
     assert.deepStrictEqual(Object.keys(objetoRetornado)[0], 'fetchMenu');
     assert.deepStrictEqual(typeof(Object.values(objetoRetornado)[0]), 'function');
@@ -60,13 +60,15 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
     // ```
-    // const objetoRetornado = createMenu({ food: {}, drink: {} });
+    //  const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(), { food: {}, drink: {}});
     // ```
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(), { food: {}, drink: {} }, );
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
