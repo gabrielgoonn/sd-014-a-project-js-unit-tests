@@ -18,22 +18,13 @@ const average = (array) => {
     soma += array[index];
   }
   const media = Math.round(soma / array.length);
-  return media;
+  console.log(media);
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number' || array[i] === []) {
+      return undefined;
+    }
+  }
 };
-console.log(average([1, 2, 3, 4, 5]));
-
+average([1, 2, '3']);
 module.exports = average;
-
-// if (typeof number !== 'number') {
-  //   return undefined;
-  // }
-  // for (let i = 0; i < array.length; i += 1) {
-  //   if (typeof array[i] !== "number" || array[i] === ' ') {
-  //     return undefined;
-  //   }
-  // }
-  // for (let i = 0; i < array.length; i += 1) {
-  //   if (array[i] === 0) {
-  //     return undefined;
-  //   }
-  // }
