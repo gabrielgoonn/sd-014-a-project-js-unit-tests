@@ -12,6 +12,23 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const assert = require('assert');
+
+const average = (array) => {
+  let sum = 0;
+  if(array.length === 0) return undefined;
+  for (let num in array) {
+    if (typeof array[num] != 'number') return undefined;
+    sum += array[num];
+  }
+  const media = sum / array.length;
+  const mediaP = Math.round(media);
+  const mediaN = Math.round(Math.abs(media));
+  if(media < 0){
+    return -mediaN;
+  }else{
+    return mediaP;
+  }
+};
 
 module.exports = average;
