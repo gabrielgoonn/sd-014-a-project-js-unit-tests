@@ -14,24 +14,26 @@
 
 const average = (array) => {
   let soma = 0;
-
   for (let index = 0; index < array.length; index += 1) {
     soma += array[index];
   }
   const media = Math.round(soma / array.length);
-  console.log(media);
-
-  //deu errado
-
-  if (typeof(number) !== 'number') {
-    return 'undefined';
-  };
-
-  if (average(array.length) === 0) {
-    return 'undefined';
-  }
+  return media;
 };
-
-average([0, 0, 0, 0, 0, 0, 0]);
+console.log(average([1, 2, 3, 4, 5]));
 
 module.exports = average;
+
+// if (typeof number !== 'number') {
+  //   return undefined;
+  // }
+  // for (let i = 0; i < array.length; i += 1) {
+  //   if (typeof array[i] !== "number" || array[i] === ' ') {
+  //     return undefined;
+  //   }
+  // }
+  // for (let i = 0; i < array.length; i += 1) {
+  //   if (array[i] === 0) {
+  //     return undefined;
+  //   }
+  // }

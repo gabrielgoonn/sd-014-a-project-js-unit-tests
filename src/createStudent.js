@@ -15,6 +15,14 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const { LooseParser } = require("acorn");
 
+const createStudent = (name) => {
+  const estudante = {
+    name: 'Leandrão, o Lobo Solitário',
+    feedback(): 'Eita pessoa boa!'
+  };
+};
+createStudent(oi)
+console.log(createStudent())
 module.exports = createStudent;
