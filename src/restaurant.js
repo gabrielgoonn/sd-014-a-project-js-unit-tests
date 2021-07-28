@@ -77,7 +77,7 @@ const createMenu = (myMenu) => {
     const drinkTotalList = drinkOrderList.map((order) => myMenu.drink[order]);
     const foodTotal = foodTotalList.reduce((sum, current) => sum + current, 0);
     const drinkTotal = drinkTotalList.reduce((sum, current) => sum + current, 0);
-    return (foodTotal + drinkTotal);
+    return +((foodTotal + drinkTotal) * 1.1).toFixed(2);
   };
   return restaurant;
 };
