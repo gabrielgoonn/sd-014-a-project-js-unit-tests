@@ -86,7 +86,18 @@ const createMenu = (myMenu) => {
     fetchMenu: () => myMenu,
     consumption: [],
     order: (request) => orderFromMenu(request),
-    pay: () => {},
+    pay: () => {
+      let sum = 0;
+      const consum = restaurant.consumption;
+      for (let index = 0; index < consum.length; index += 1) {
+        if (myMenu.food[consum[index]]) {
+          sum += myMenu.food[consum[index]];
+        } else if (myMenu.drink[consum[index]]) {
+          sum += myMenu.drink[consum[index]];
+        }
+      }
+      return sum + (sum * 0.1);
+    },
   });
   return restaurant;
 };
