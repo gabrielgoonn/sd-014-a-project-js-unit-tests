@@ -68,4 +68,4 @@ const getCharacter = (name) => {
   return undefined;
 };
 
-module.exports = { getCharacter, characters }; // Adicona o characters, na importacao
+module.exports = getCharacter; 
