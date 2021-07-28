@@ -23,8 +23,10 @@ const circle = (radius) => {
   if (!radius) { return undefined; }
   return {
     radius,
-    area: (PI * radius * radius).toPrecision(4),
-    circumference: (2 * PI * radius).toPrecision(4),
+    // Mais uma maneira de arrendondar a casa decimal!
+    // Fonte: https://devdocs.io/javascript/global_objects/number/tofixed
+    area: parseFloat((PI * radius * radius).toFixed(2)),
+    circumference: parseFloat((2 * PI * radius).toFixed(2)),
   };
 };
 
