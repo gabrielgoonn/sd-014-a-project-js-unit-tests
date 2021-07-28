@@ -91,5 +91,4 @@ const createMenu = (myMenu) => {
   return restaurant;
 };
 
-
 module.exports = createMenu;
