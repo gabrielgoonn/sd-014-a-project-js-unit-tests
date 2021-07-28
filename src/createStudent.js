@@ -16,15 +16,11 @@
 */
 
 const createStudent = (name) => {
-if(typeof name === 'string'){
-return {
-    name,
-    feedback: () => {
-        return 'Eita pessoa boa!';
-    }
-  };
-}
+  if (typeof name === 'string') {
+    return {
+      name,
+      feedback: () => {return 'Eita pessoa boa!'},
+},
 };
-
-
-module.exports = createStudent;
+}
+module.exports = createStudent

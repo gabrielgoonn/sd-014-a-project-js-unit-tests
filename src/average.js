@@ -19,13 +19,12 @@ const average = (array) => {
   }
   for (let numero of array) {
     if (typeof numero !== 'number') {
-      return undefined
-    } else {
-      somatorio += numero;
+      return undefined;
     }
+      somatorio += numero;
   }
   return Math.round(somatorio / array.length);
+  };
   // referência: https://www.w3schools.com/jsref/jsref_obj_math.asp
-};
 
 module.exports = average;
