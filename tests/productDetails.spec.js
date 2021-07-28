@@ -30,9 +30,13 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.fail();
+    // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
+
+    // Inspiração: https://stackoverflow.com/questions/4775722/how-to-check-if-an-object-is-an-array
+    assert.ok(Array.isArray(productDetails('oi', 'oi')), 'productDetails deve retornar uma array');
+
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
