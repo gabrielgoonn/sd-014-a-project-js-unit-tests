@@ -72,3 +72,4 @@ describe('9 - Implemente os casos de teste para a função `getCharacter`', () =
     assert.strictEqual(getCharacter('Algo'), undefined);
   });
 });
+
