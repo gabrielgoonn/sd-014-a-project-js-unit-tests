@@ -85,25 +85,25 @@ const createMenu = (param) => {
     fetchMenu: () => param,
     consumption: [],
     order: (request) => {
-      menuCompleto['consumption'].push(request);
+      menuCompleto.consumption.push(request);
     },
     pay: () => {
       const type = menuCompleto.consumption;
       const typeFood = Object.keys(menuCompleto.fetchMenu());
       let valor = 0;
       const objeto = menuCompleto.fetchMenu();
-      for (let indice in typeFood) {
-        for (let x in type) {
+      for (let indice = 0; indice < typeFood.length; indice += 1) {
+        for (let x = 0; x < type.length; x += 1) {
           if (objeto[typeFood[indice]][type[x]] !== undefined) {
             valor += objeto[typeFood[indice]][type[x]];
           }
         }
       }
-
-      return valor += 10 / 100 * valor;
-    }
+      valor += (10 / 100) * valor;
+      return valor;
+    },
   };
-  return menuCompleto
+  return menuCompleto;
 };
 
 module.exports = createMenu;
