@@ -17,7 +17,7 @@ const average = (array) => {
   if (array.length === 0) {
     return undefined;
   }
-  for (index = 0; index < array.length; index += 1) {
+  for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
       return undefined;
     }
@@ -26,5 +26,5 @@ const average = (array) => {
   // Math.round usado para inteirar o numero busquei no endereço https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
   return Math.round(sumArray / array.length);
 };
-console.log(average([-11, -5, 2]));
+// console.log(average([-11, -5, 2]));
 module.exports = average;
