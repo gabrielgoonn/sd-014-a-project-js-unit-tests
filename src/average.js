@@ -15,11 +15,11 @@
 const average = (arr) => {
   let result = 0;
   if (arr.length === 0) return;
-  for (let i = 0; i < arr.length; i += 1) {
-    if (typeof arr[i] !== 'number') return;
+  for (const number of arr) {
+    if (typeof number !== 'number') return;
   }
-  for (let i = 0; i < arr.length; i += 1) {
-    result += arr[i];
+  for (const number of arr) {
+    result += number;
   }
   return Math.round(result / arr.length);
 };

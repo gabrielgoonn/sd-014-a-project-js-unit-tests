@@ -87,7 +87,7 @@ const createMenu = (obj) => {
   Object.assign(restaurant, {
     fetchMenu: () => obj,
     consumption: [],
-    order: (request) => orderFromMenu(request),
+    order: orderFromMenu,
     pay: () => {
       let sum = 0;
       const prices = {};
