@@ -78,16 +78,57 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
-const createMenu = (objeto) => ({
-  fetchMenu: () => (objeto),
-  consumption: [],
-  order: (request) => {
-    this.consumption.push(request)
+const checkFoods = (arrayPedidos, arrayComidas, conta) => {
+  for (let index = 0; index < arrayPedidos.length; index += 1) {
+    for (const array of arrayComidas) {
+      if (arrayPedidos[index] === array[0]) {
+        conta.push(array[1]);
+      }
+    }
   }
-});
+};
 
-const obj = createMenu({objeto: {}, qualquer: {}});
-obj.order('coxinha');
+const checkDrinks = (arrayPedidos, arrayBebidas, conta) => {
+  for (let index = 0; index < arrayPedidos.length; index += 1) {
+    for (const array of arrayBebidas) {
+      if (arrayPedidos[index] === array[0]) {
+        conta.push(array[1]);
+      }
+    }
+  }
+};
+
+const somaValores = (array) => {
+  let soma = 0;
+  for (const valor of array) {
+    soma += valor;
+  }
+  const total = soma + (soma * 0.1);
+  return total;
+};
+
+const createMenu = (objeto) => {
+  const restaurant = {
+    fetchMenu: () => (objeto),
+    consumption: [],
+    order: (request) => {
+      restaurant.consumption.push(request);
+    },
+    pay: () => {
+      const comidas = Object.keys(restaurant.fetchMenu().food);
+      const valoresComidas = Object.values(restaurant.fetchMenu().food)
+      const bebidas = Object.keys(restaurant.fetchMenu().drink);
+      const valoresBebidas = Object.values(restaurant.fetchMenu().drink)
+      const pedidos = restaurant.consumption;
+      const conta = [];
+
+      checkFoods(pedidos, comidas, valoresComidas, conta);
+      checkDrinks(pedidos, bebidas, valoresBebidas, conta);
+
+      return somaValores(conta);
+    },
+  };
+  return restaurant;
+};
 
 module.exports = createMenu;
