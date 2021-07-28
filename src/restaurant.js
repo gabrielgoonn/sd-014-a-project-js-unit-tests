@@ -96,9 +96,10 @@ const menu = {
 const createMenu = (objetoMenu) => {
   const objeto = {
     fetchMenu: () => objetoMenu, // retorna o proprio objeto como entrada
-    consumption: () => [], // funcao com o valor inical array vazio;
-    order: (pedido) => this.consumption.push(pedido), // funcao que adiciona string ao array da linha superior
+    consumption: [], // valor inical array vazio, onde armazena pedido;
+    order: (pedido) => objeto.consumption.push(pedido), // funcao que adiciona string ao array da linha superior
   };
+  return objeto; // adicionado depois de testar no console, ele só retorna se tiver returne
 };
 
 function verifica(e) {
@@ -115,9 +116,10 @@ function verifica(e) {
 }
 
 const pay = (arrayConsumo) => { // recebe um objeto e o array, percorre, para somar
-  let resultadoSoma = verifica(arrayConsumo);
-  if (resultadoSoma === 0) { // Se nao somar nada, retorna, nao definido
+  if (verifica(arrayConsumo) === 0) { // Se nao somar nada, retorna, nao definido
     return undefined;
   }
-  return resultadoSoma * 1.1;
+  return verifica(arrayConsumo) * 1.1;
 };
+
+module.exports = createMenu;
