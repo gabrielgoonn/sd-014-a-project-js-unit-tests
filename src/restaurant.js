@@ -88,16 +88,15 @@ const createMenu = (param) => {
       menuCompleto.consumption.push(request);
     },
     pay: () => {
-      const type = menuCompleto.consumption;
-      const typeFood = Object.keys(menuCompleto.fetchMenu());
-      const objeto = menuCompleto.fetchMenu();
+      const typeFood = menuCompleto.consumption;
+      const menu = menuCompleto.fetchMenu();
       for (let indice = 0; indice < typeFood.length; indice += 1) {
-        for (let x = 0; x < type.length; x += 1) {
-          if (objeto[typeFood[indice]][type[x]] !== undefined) {
-            valor += objeto[typeFood[indice]][type[x]];
-          }
+        if (menu.food[typeFood[indice]] !== undefined) {
+          valor += menu.food[typeFood[indice]];
+        } else if (menu.drink[typeFood[indice]] !== undefined) {
+          valor += menu.drink[typeFood[indice]];
         }
-      }
+    }
       valor += (10 / 100) * valor;
       return valor;
     },
