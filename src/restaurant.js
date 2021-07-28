@@ -86,16 +86,18 @@ function orderItens(param2) {
 function payment() {
   const menu = this.fetchMenu();
   const ordered = this.consumption;
-  let total = 0;
-  for (const i of ordered) {
-    if (menu.food[i]) {
-      total += menu.food[i];
+  let result;
+  ordered.reduce((total, elem) => {
+    if (menu.food[elem]) {
+      total += menu.food[elem];
     }
-    if (menu.drink[i]) {
-      total += menu.drink[i];
+    if (menu.drink[elem]) {
+      total += menu.drink[elem];
     }
-  }
-  return total * 1.1;
+    result = total;
+    return result;
+  }, 0);
+  return result * 1.1;
 }
 
 function createMenu(param) {
