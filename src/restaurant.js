@@ -91,6 +91,19 @@ const menu = {
   },
 };
 
+function verifica(e) { // recebe o objeto
+  let sum = 0;
+  for (let iten of e.consumption) { // verifica os pedido, array pedidos
+    if (Object.keys(e.fetchMenu().food).includes(`${iten}`)) { // verifica se existe no outro objeto
+      sum += e.fetchMenu().food[`${iten}`];
+    }
+    if (Object.keys(e.fetchMenu().drink).includes(`${iten}`)) { // objeto principal, de entratada
+      sum += e.fetchMenu().drink[`${iten}`]; // Funciona sem aspas.
+    }
+  }
+  return sum;
+}
+
 // consumo = Object.keys(); //  // Retorno: ['coxinha']
 // pay = Object.values(); // Retorno: 3.9
 const createMenu = (objetoMenu) => {
@@ -98,28 +111,16 @@ const createMenu = (objetoMenu) => {
     fetchMenu: () => objetoMenu, // retorna o proprio objeto como entrada
     consumption: [], // valor inical array vazio, onde armazena pedido;
     order: (pedido) => objeto.consumption.push(pedido), // funcao que adiciona string ao array da linha superior
+    // Mude para a verificao seja no pedido, order, nao no pagamento
+    pay: () => { // recebe um objeto e o array, percorre, para somar
+      const valor = verifica(objeto);
+      if (valor !== 0) {
+        return valor * 1.1;
+      }
+      return undefined; // Se nao somar nada, retorna, nao definido
+    },
   };
   return objeto; // adicionado depois de testar no console, ele só retorna se tiver returne
-};
-
-function verifica(e) {
-  let sum = 0;
-  for (let iten of e) {
-    if (Object.keys(e.food).includes(`${iten}`)) { // verifica se existe
-      sum += e.food[`${iten}`];
-    }
-    if (Object.keys(e.drink).includes(`${iten}`)) { // verifica se existe
-      sum += e.drink[`${iten}`];
-    }
-  }
-  return sum;
-}
-
-const pay = (arrayConsumo) => { // recebe um objeto e o array, percorre, para somar
-  if (verifica(arrayConsumo) === 0) { // Se nao somar nada, retorna, nao definido
-    return undefined;
-  }
-  return verifica(arrayConsumo) * 1.1;
 };
 
 module.exports = createMenu;
