@@ -47,35 +47,35 @@ Retorno:
 OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-  it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    assert.deepStrictEqual(getCharacter(), undefined);
-    // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
-    assert.deepStrictEqual(getCharacter('Arya'), {
-    name: 'Arya Stark',
-    class: 'Rogue',
-    phrases: ['Not today', 'A girl has no name.'],
-    }); // Pega o characters, da importacao
-    // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-    assert.deepStrictEqual(getCharacter('Brienne'), {
-    name: 'Brienne Tarth',
-    class: 'Knight',
-    phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
-    }); // Pega o characters, da importacao
-    // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-    assert.deepStrictEqual(getCharacter('Melissandre'), {
-    name: 'Melissandre',
-    class: 'Necromancer',
-    phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
-    }); // Pega o characters, da importacao
-    // Teste se a função se os parâmetros não são Case Sensitive.
-    assert.deepStrictEqual(getCharacter('aRyA'), {
-    name: 'Arya Stark',
-    class: 'Rogue',
-    phrases: ['Not today', 'A girl has no name.'],
-    }); // dá certo, pq dentro da funcao, ele deixa todas as entradas validas em toLowerCase
-    // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
-    assert.deepStrictEqual(getCharacter('Dogl4'), undefined);
-  });
+it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
+  const characters = {
+    arya: {
+      name: 'Arya Stark',
+      class: 'Rogue',
+      phrases: ['Not today', 'A girl has no name.'],
+    },
+    brienne: {
+      name: 'Brienne Tarth',
+      class: 'Knight',
+      phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
+    },
+    melissandre: {
+      name: 'Melissandre',
+      class: 'Necromancer',
+      phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
+    },
+  };
+  // ESCREVA SEUS TESTES ABAIXO:
+  // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+  assert.deepStrictEqual(getCharacter(), undefined);
+  // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
+  assert.deepStrictEqual(getCharacter('Arya'), characters.arya); // Pega o characters, da importacao
+  // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
+  assert.deepStrictEqual(getCharacter('Brienne'), characters.brienne); // Pega o characters, da importacao
+  // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
+  assert.deepStrictEqual(getCharacter('Melissandre'), characters.melissandre); // Pega o characters, da importacao
+  // Teste se a função se os parâmetros não são Case Sensitive.
+  assert.deepStrictEqual(getCharacter('aRyA'), characters.arya); // dá certo, pq dentro da funcao, ele deixa todas as entradas validas em toLowerCase
+  // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
+  assert.deepStrictEqual(getCharacter('Dogl4'), undefined);
 });
