@@ -79,19 +79,18 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {
-  return menu = {
-    fetchMenu: () => {},
-  };
-};
+const createMenu = () => ({ fetchMenu: () => {} });
 
 module.exports = createMenu;
 
 const assert = require('assert');
 
-const obj = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+const objetoRetornado = createMenu();
 
-/*  console.log(typeof createMenu());
-console.log(Object.keys(createMenu())[0]);
-console.log(Object.values(createMenu())[0]);  */
+/*  console.log(typeof objetoRetornado);
+console.log(Object.keys(objetoRetornado)[0]);
+console.log(Object.values(objetoRetornado)[0]);
 
+assert.deepStrictEqual(typeof objetoRetornado, 'object');
+assert.deepStrictEqual(Object.keys(objetoRetornado)[0], 'fetchMenu');
+assert.deepStrictEqual(typeof(Object.values(objetoRetornado)[0]), 'function');  */
