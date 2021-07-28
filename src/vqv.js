@@ -17,7 +17,7 @@
 */
 
 const vqv = (nome, idade) => {
-  if (typeof nome === "string" && typeof idade === "number") {
+  if (typeof nome === 'string' && typeof idade === 'number') {
     return `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
@@ -25,5 +25,5 @@ trabalho na Trybe e mando muito em programação!
   }
 };
 
-console.log(vqv("Tunico", 20));
+console.log(vqv('Tunico', 20));
 module.exports = vqv;
