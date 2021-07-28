@@ -117,7 +117,7 @@ const createMenu = (object) => {
   const functionsObject = { fetchMenu: () => object,
                             order: (request) => pushOrder(request, newObject),
                             pay: () => calculatePayment(newObject),
-                    };
+                          };
   Object.assign(newObject, functionsObject);
   return newObject;
 };
