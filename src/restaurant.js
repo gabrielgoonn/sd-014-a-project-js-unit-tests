@@ -86,11 +86,27 @@ const orderFromMenu = (request) => {
   return request;
 };
 
+const passaARegua = () => {
+  let contaFinal = 0;
+  const menuFood = restaurant.fetchMenu().food;
+  const menuDrink = restaurant.fetchMenu().drinks;
+  for (let index = 0; index < restaurant.consumption.length; index += 1) {
+    let item = restaurant.consumption[index];
+    if (menuFood[item] !== undefined) {
+      contaFinal += menuFood[item];
+    } else {
+      contaFinal += menuDrink[item];
+    }
+  }
+  return parseFloat(contaFinal.toPrecision(4));
+};
+
 const createMenu = (myMenu) => {
   restaurant = {
     fetchMenu: () => myMenu,
     consumption: [],
     order: (request) => orderFromMenu(request),
+    pay: () => passaARegua(),
   };
   return restaurant;
 };

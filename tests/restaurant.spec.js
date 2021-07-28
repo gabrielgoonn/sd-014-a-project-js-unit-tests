@@ -1,6 +1,6 @@
 const assert = require('assert');
 const createMenu = require('../src/restaurant');
- 
+
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
@@ -59,10 +59,16 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
     // ```
-    objetoRetornado = createMenu({ food: {}, drink: {} });
+    objetoRetornado = createMenu({
+      food: {},
+      drink: {}
+    });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
-    assert.deepStrictEqual(objetoRetornado.fetchMenu(), { food: {}, drink: {}});
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(), {
+      food: {},
+      drink: {}
+    });
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
     objetoRetornado = createMenu('objetoQualquer');
@@ -76,13 +82,14 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
+    objetoRetornado = createMenu('objetoQualquer');
     assert.deepStrictEqual(objetoRetornado.consumption, []);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
     // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
+    objetoRetornado = createMenu('objetoQualquer');
     objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
@@ -91,7 +98,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
-    objetoRetornado.consumption = [];
+    objetoRetornado = createMenu('objetoQualquer');
     objetoRetornado.order("coxinha");
     objetoRetornado.order("agua");
     objetoRetornado.order("sopa");
@@ -103,7 +110,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     // ```
-    objetoRetornado.consumption = [];
+    objetoRetornado = createMenu('objetoQualquer');
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
@@ -119,6 +126,21 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
+    objetoRetornado = createMenu({
+      food: {
+        coxinha: 3.90,
+        sanduiche: 9.90
+      },
+      drinks: {
+        agua: 3.90,
+        cerveja: 6.90
+      }
+    });
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    let somaDosPreçosDosPedidos = 3.9 * 3;
+    assert.strictEqual(objetoRetornado.pay(), somaDosPreçosDosPedidos);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
