@@ -95,18 +95,23 @@ const menu = {
 // pay = Object.values(); // Retorno: 3.9
 const createMenu = () => {};
 
-const pay = (obj, arr) => { // recebe um objeto e o array, percorre, para somar
+function verifica(e) {
   let sum = 0;
-  for (let iten of obj.arr) {
- if (Object.keys(obj.arr.food).includes(`${iten}`)) { // verifica se existe
-    sum += obj.arr.food[`${iten}`];
+  for (let iten of e) {
+    if (Object.keys(e.food).includes(`${iten}`)) { // verifica se existe
+      sum += e.food[`${iten}`];
+    }
+    if (Object.keys(e.drink).includes(`${iten}`)) { // verifica se existe
+      sum += e.drink[`${iten}`];
+    }
   }
-  if (Object.keys(obj.arr.drink).includes(`${iten}`)) { // verifica se existe
-    sum += obj.arr.drink[`${iten}`];
-  }
+  return sum;
 }
-  if (sum === 0) { // Se nao somar nada, retorna, nao definido
+
+const pay = (arrayConsumo) => { // recebe um objeto e o array, percorre, para somar
+  let resultadoSoma = verifica(arrayConsumo);
+  if (resultadoSoma === 0) { // Se nao somar nada, retorna, nao definido
     return undefined;
   }
-  return sum * 1.1;
+  return resultadoSoma * 1.1;
 };
