@@ -45,7 +45,8 @@ Retorno:
 OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
+describe('9 - Implemente os casos de teste da função getCharacter', () => {
+  it('Verifica se a função getCharacter retorna o objeto do personagem corretamente.', () => {
   // ESCREVA SEUS TESTES ABAIXO:
   // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
   assert.strictEqual(getCharacter(), undefined);
@@ -59,4 +60,5 @@ it('Verifica se a função `getCharacter` retorna o objeto do personagem correta
   assert.deepStrictEqual(getCharacter('aRyA'), { name: 'Arya Stark', class: 'Rogue', phrases: ['Not today', 'A girl has no name.'],}); // dá certo, pq dentro da funcao, ele deixa todas as entradas validas em toLowerCase
   // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
   assert.deepStrictEqual(getCharacter('Dogl4'), undefined);
+});
 });
