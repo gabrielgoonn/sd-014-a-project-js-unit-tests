@@ -50,6 +50,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     const test123 = () => (objSlice1 === '123' && objSlice2 === '123') ? true:false;
    
     //testes
+    //o primeiro teste eu tive a mesma dificuldade que o Hector colocou no Slack e a ajuda do pessoal tambem me fez entender como solucionar o problema.
     assert.strictEqual(productDetails(obj1, obj2) instanceof Array, true);
     assert.strictEqual(typeof productDetails(), 'object');
     assert.strictEqual(productDetails().length, 2);
