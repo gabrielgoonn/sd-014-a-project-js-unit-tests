@@ -79,17 +79,17 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const menu = {
-  food: {
-    coxinha: 3.9,
-    sopa: 9.9,
-    Lasanha: 20,
-  },
-  drink: {
-    agua: 3.9,
-    cerveja: 6.9,
-  },
-};
+// const menu = {
+//   food: {
+//     coxinha: 3.9,
+//     sopa: 9.9,
+//     Lasanha: 20,
+//   },
+//   drink: {
+//     agua: 3.9,
+//     cerveja: 6.9,
+//   },
+// };
 
 function verifica(e) { // recebe o objeto
   let sum = 0;
@@ -115,7 +115,7 @@ const createMenu = (objetoMenu) => {
     pay: () => { // recebe um objeto e o array, percorre, para somar
       const valor = verifica(objeto);
       if (valor !== 0) {
-        return valor * 1.1;
+        return (valor * 1.1).toFixed(2); // Referencias <https://stackoverflow.com/questions/15762768/javascript-math-round-to-two-decimal-places> Arredonda 2 números p/ casa decimal.
       }
       return undefined; // Se nao somar nada, retorna, nao definido
     },
