@@ -69,3 +69,12 @@ const getCharacter = (name) => {
 };
 
 module.exports = getCharacter;
+
+/*  const assert = require('assert');
+
+assert.deepStrictEqual(getCharacter(), undefined);
+assert.deepStrictEqual(getCharacter('Arya'), characters.arya);
+assert.deepStrictEqual(getCharacter('Brienne'), characters.brienne);
+assert.deepStrictEqual(getCharacter('Melissandre'), characters.melissandre);
+assert.deepStrictEqual(getCharacter('ArYa'), characters.arya);
+assert.deepStrictEqual(getCharacter('Snow'), undefined);  */
