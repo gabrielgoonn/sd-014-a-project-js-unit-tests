@@ -66,6 +66,6 @@ const getCharacter = (name) => {
   }
 
   return undefined;
-};
+}; 
 
 module.exports = getCharacter;
