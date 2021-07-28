@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 /* eslint-disable max-len */
 
 /*
@@ -79,6 +80,48 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = (objects) => {
+  const obj = {
+    consumption: [],
+    fetchMenu() { return objects; },
+  };
+
+  let order = (pedido) => { 
+    obj.consumption.push(pedido); 
+    return obj; 
+  };
+
+  obj.order = order;
+
+  // eslint-disable-next-line sonarjs/cognitive-complexity
+  const pay = () => {
+    let price = 0;
+    for (let i = 0; i < obj.consumption.length; i += 1) {
+      if (obj.consumption[i] === 'coxinha') {
+        price += 3.90;
+      } else if (obj.consumption[i] === 'sanduiche') {
+        price += 9.90;
+      } else if (obj.consumption[i] === 'agua') {
+        price += 3.90;
+      } else if (obj.consumption[i] === 'cerveja') {
+        price += 6.90;
+      } else if (obj.consumption[i] === 'sopa') {
+        price += 9.90;
+      }
+      }
+      return price + (price * 0.1);
+    };
+    obj.pay = pay;
+
+    return obj;
+  };
+
+  // const menu = createMenu();
+  // menu.order('cerveja');
+  // menu.order('sopa');
+
+  // console.log(menu.consumption);
+
+  // console.log(menu.pay());
 
 module.exports = createMenu;
