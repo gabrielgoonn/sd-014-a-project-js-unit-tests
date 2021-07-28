@@ -19,6 +19,18 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+// como aprendi a descartar a parte inteira do number: 
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
+
+// De onde aprendi a colocar o arrow function em um object key: 
+// https://stackoverflow.com/questions/36717376/arrow-function-in-object-literal
+
+const calculator = {
+
+  add: (a, b) => Math.trunc(a + b),
+  mult: (a, b) => Math.trunc(a * b),
+  div: (a, b) => Math.trunc(a / b),
+  sub: (a, b) => Math.trunc(a - b),
+};
 
 module.exports = calculator;
