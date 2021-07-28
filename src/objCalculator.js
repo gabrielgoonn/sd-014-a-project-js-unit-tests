@@ -19,6 +19,11 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (f, p) => f + p,
+  mult: (f, p) => f * p,
+  div: (f, p) => Math.trunc(f / p), // O método Math.trunc() retorna a parte inteira de um número, descartando suas casas decimais.
+  sub: (f, p) => f - p,
+};
 
 module.exports = calculator;
