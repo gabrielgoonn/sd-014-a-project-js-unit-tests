@@ -6,7 +6,7 @@
 
   - ler o menu cadastrado; read
   - fazer pedidos; order
-  - verificar o que foi pedido; check
+  - verificar o que foi pedido; consumption
   - somar o valor da conta. sum
 
   A estrutura deste código e deste objeto já foi definida e você irá implementá-la.
@@ -79,11 +79,24 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+// 
+// pedido: (list) => { createMenu.consumption.push(list) },  
 
-const createMenu = (menu) => ({ 
-  fetchMenu: () => menu
-  food: (a, b) => a + b, 
-  drink: (a, b) => a + b,
- });
+// let pedidos = [];
+const createMenu = (menu) => ({
+  fetchMenu: () => menu,
+  consumption: [],
+  order(str) { this.consumption.push(str); },
+  pay() { 
+    let preço = 0; this.consumption.forEach((elem) => {
+    if (elem in menu.food) {
+      preço += menu.food[elem];
+    } else if (elem in menu.drink) {
+      preço += menu.drink[elem];
+    }
+    });
+    return preço * 1.10.toPrecision(4);
+  },
+});
 
 module.exports = createMenu;
