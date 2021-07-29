@@ -15,6 +15,13 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+// Estou utilizando Higher Order Functions criando duas chaves e retornando um objeto com o nome e o feedback da mensagem
+const createStudent = (name) => {
+  const estudante = {
+    name,
+    feedback: () => 'Eita pessoa boa!',
+  };
+  return estudante;
+};
 
 module.exports = createStudent;
