@@ -119,5 +119,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     assert.strictEqual(objetoRetornado8.pay(), somaDosPreçosDosPedidos, 'A função pay deve retornar o valor correto da soma dos pedidos');
 
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+
+    // EXTRA: Verifica que ao se fazer um pedido de um item que não existe no menu, seja retornado um erro apropriado.
+    const objetoRetornadoExtra = createMenu(menuEsperado);
+    const itemInexistente = 'biscoitos'; // Não temos biscoitos!
+    assert.throws(()=> {objetoRetornadoExtra.order(itemInexistente); }, /^Erro: não existe biscoitos no menu$/);
   });
 });
