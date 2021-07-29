@@ -55,17 +55,12 @@ const characters = {
 };
 
 const getCharacter = (name) => {
-  if (name === undefined) {
+  if (name == null) return undefined;
+  const minus = name.toLowerCase();
+  if (Object.keys(characters).includes(minus)) {
+    return characters[minus];
+  }
     return undefined;
-  }
-
-  const lowered = name.toLowerCase();
-
-  if (characters[lowered]) {
-    return characters[lowered];
-  }
-
-  return undefined;
 };
 
 module.exports = getCharacter;
