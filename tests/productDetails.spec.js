@@ -33,14 +33,13 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // ESCREVA SEUS TESTES ABAIXO:
     // isArray: verifica se a função é ou não um array.
     // Referência: w3schools https://www.w3schools.com/jsref/jsref_isarray.asp 
-    // assert.strictEqual(Array.isArray(productDetails()), true);
-    // assert.strictEqual(productDetails('Alcool gel', 'Mascara').length, 2);
-    // assert.strictEqual(typeof productDetails('Alcool gel', 'Mascara'), 'object');
-    // assert.notDeepStrictEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Mascara')[1]);
-    // Referência: w3schools https://www.w3schools.com/jsref/jsref_every.asp
-    // Referência: w3schools https://www.w3schools.com/jsref/jsref_substr.asp
-    // assert.strictEqual(productDetails.every((item) => {
-    //   item.details.productId.substr(-3) }), true);
+    assert.strictEqual(Array.isArray(productDetails()), true);
+    assert.strictEqual(productDetails('Alcool gel', 'Mascara').length, 2);
+    assert.strictEqual(typeof productDetails('Alcool gel', 'Mascara'), 'object');
+    assert.notDeepStrictEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Mascara')[1]);
+    // Referência: w3schools https://www.w3schools.com/jsref/jsref_slice_array.asp
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.slice(-3), '123');
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.slice(-3), '123');
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
     // Teste que os dois itens dentro do array retornado pela função são objetos.
