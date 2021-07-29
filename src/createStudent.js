@@ -19,8 +19,8 @@ const createStudent = (name) => {
   if (typeof name === 'string') {
     return {
       name,
-      feedback: () => {return 'Eita pessoa boa!'},
-},
+      feedback: () => 'Eita pessoa boa!',
+    };
+  }
 };
-}
-module.exports = createStudent
+module.exports = createStudent;
