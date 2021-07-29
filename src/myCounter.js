@@ -15,15 +15,19 @@
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
 
+// O myArrayOrder: vai popularizar os arrays em ordem a cada loop.
 const myCounter = () => {
-  var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
-    myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+  let myArrayOrder = [];
+  // Primeiro entra nesse loop de repetição. 
+  for (let index = 0; index <= 3; index += 1) {
+    // Referência: w3schools https://www.w3schools.com/jsref/jsref_push.asp
+    myArrayOrder.push(index);
+    // Depois entra nesse outro loop de repetição.
+    for (let startNumber2 = 2; startNumber2 <= 3; startNumber2 += 1) {
+      myArrayOrder.push(startNumber2);
     }
   }
-  return myArray;
+  return myArrayOrder;
 };
 
 module.exports = myCounter;
