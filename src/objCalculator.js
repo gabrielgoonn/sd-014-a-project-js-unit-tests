@@ -30,10 +30,10 @@ const calculator = {
     return Math.trunc(num1 / num2)
   },
   sub: (num1, num2) => {
-    return Math.round(num1 - num2)
+    return Math.round(num1 - num2);
   }
 };
 
-console.log(calculator.div(5,2))
+console.log(calculator.div(5, 2));
 
 module.exports = calculator;
