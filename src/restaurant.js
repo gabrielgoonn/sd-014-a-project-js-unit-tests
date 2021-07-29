@@ -98,7 +98,7 @@ const orderRequest = (request) => {
   if (food[request] || drink[request]) {
     restaurant.consumption.push(request);
   } else {
-    throw Error(`Erro: não existe ${request} no menu`);
+    throw Error(`não existe ${request} no menu`);
   }
 };
 

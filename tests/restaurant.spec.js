@@ -93,11 +93,20 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     const objetoRetornado6 = createMenu(menuEsperado);
+    let gerouErro = false;
+    
     objetoRetornado6.order("coxinha");
     objetoRetornado6.order("agua");
+    
+    try {
+      objetoRetornado6.order("sashimi"); // oops! nem reparei nesse!
+    } catch { 
+      gerouErro = true;
+    }
+    assert.ok(gerouErro, 'Pedidos de itens inexistentes devem gerar erro');
+    
     objetoRetornado6.order("sopa");
-    objetoRetornado6.order("sashimi");
-    assert.deepStrictEqual(objetoRetornado6.consumption, ["coxinha", "agua", "sopa", "sashimi"], 'Os pedidos feitos devem estar gravados na sequência solicitada');
+    assert.deepStrictEqual(objetoRetornado6.consumption, ["coxinha", "agua", "sopa"], 'Os pedidos feitos devem estar gravados na sequência solicitada');
     
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -123,6 +132,6 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // EXTRA: Verifica que ao se fazer um pedido de um item que não existe no menu, seja retornado um erro apropriado.
     const objetoRetornadoExtra = createMenu(menuEsperado);
     const itemInexistente = 'biscoitos'; // Não temos biscoitos!
-    assert.throws(()=> {objetoRetornadoExtra.order(itemInexistente); }, /^Erro: não existe biscoitos no menu$/);
+    assert.throws(() => { objetoRetornadoExtra.order(itemInexistente); }, `Erro: não existe ${itemInexistente} no menu`);
   });
 });
