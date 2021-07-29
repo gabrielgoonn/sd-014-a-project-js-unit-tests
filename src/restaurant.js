@@ -79,6 +79,40 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const assert = require('assert');
+
+const pedido = (item) => {
+  meuRestaurante.consumption.push(item);
+}
+
+
+const createMenu = (objetoMenu) => {
+  return {
+    fetchMenu: () => objetoMenu,
+    consumption: [],
+    order: (consumo) => {
+      pedido(consumo);
+    }
+  }
+
+}
+
+const meuRestaurante = createMenu(//{
+  //food: {
+  //  'coxinha': 3.90,
+  //  'sanduiche': 9.90
+  //},
+  //drinks: {
+  //  'agua': 3.90,
+  //  'cerveja': 6.90
+  //}
+//}
+);
+
+
+
+meuRestaurante.order('coxinha')
+
+console.log(meuRestaurante.consumption);
 
 module.exports = createMenu;
