@@ -5,7 +5,6 @@
     (2) feedback, contendo uma função que retorna a frase 'Eita pessoa boa!' ao ser chamada.
 
   Faça a função da chave feedback com arrow functions!
-
   Parâmetros:
     - Uma string;
   Comportamento:
@@ -14,7 +13,14 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
+const goodPerson = 'Eita pessoa boa!';
 
-const createStudent = () => {};
+const createStudent = (nomeInformado) => {
+  const novoObjeto = {
+    name: nomeInformado, 
+    feedback: () => `${goodPerson}`,  
+  };
+  return novoObjeto;
+};
 
 module.exports = createStudent;

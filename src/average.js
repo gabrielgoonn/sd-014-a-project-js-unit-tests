@@ -27,6 +27,4 @@ const average = (array) => {
   let media = Math.round(sum / tamanho);
   return media;
 };
-console.log(average([1, 3, '2']));
-
 module.exports = average;
