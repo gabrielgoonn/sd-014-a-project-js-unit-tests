@@ -96,6 +96,12 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     assert.strictEqual(characterFunc.getCharacter(charactersObj.melissandre), charactersObj.melissandre);
     assert.notStrictEqual(characterFunc.getCharacter(charactersObj.melissandre), undefined);
     assert.strictEqual(characterFunc.getCharacter(obj2), obj2);
+    // ESCREVA SEUS TESTES ABAIXO:
+    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
+    // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
+    // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
     // Teste se a função se os parâmetros não são Case Sensitive.
+    // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
   });
 });
