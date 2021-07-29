@@ -27,6 +27,9 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Ref: https://www.w3schools.com/nodejs/met_assert_deepstrictequal.asp
+    // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseFloat
+    // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision
+    // Fiz esse requisito com a ajuda do Marcello Alves, Turma 14 - A 
     // Teste se circle retorna um objeto.
     assert.strictEqual(typeof (circle(1)), 'object');
     // Teste se o objeto retornado tem 3 entradas.
@@ -39,6 +42,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     // Fórmula: a = πr² // a = π * 3²
     assert.strictEqual(parseFloat(circle(3).area.toPrecision(4)), 28.26);
+    // toPrecision reduz as casas decimais para a indicada (4), porem ele retorna uma string, com o parseFloat, o retorno volta a ser um number.
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     assert.deepStrictEqual(circle(3), {radius: 3, area: 28.259999999999998, circumference: 18.84})
   });
