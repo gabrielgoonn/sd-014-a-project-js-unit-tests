@@ -15,7 +15,7 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const { LooseParser } = require("acorn");
+const { LooseParser } = require('acorn');
 
 const createStudent = (nome) => {
   const estudante = {
