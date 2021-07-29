@@ -81,14 +81,14 @@
 
 const createMenu = (obj) => {
   const menu = {
-    fetchMenu: () => { return obj },
+    fetchMenu: () => obj,
     consumption: [],
     order: (ordem) => {
       const pedido = menu.consumption.push(ordem);
       return menu.consumption;
     },
     pay: () => {
-      const consu = meuRestaurante.consumption;
+      const consu = menu.consumption;
       let preco = 0;
 
       consu.forEach((item) => {

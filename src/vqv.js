@@ -15,7 +15,14 @@
       trabalho na Trybe e mando muito em programação!
       #VQV!'
 */
+const assert = require('assert');
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  const string = `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\n`
+  + 'trabalho na Trybe e mando muito em programação!\n#VQV!';
+
+  const teste = (!nome && !idade ? undefined : `${string}`);
+  return teste;
+};
 
 module.exports = vqv;
