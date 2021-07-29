@@ -67,10 +67,12 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     assert.ok(menuKeys.includes('drink'), 'O menu precisa ter a chave "drink"');
 
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
-    // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
-    // ```
+    const menuEsperado = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+    const objetoRetornado3 = createMenu(menuEsperado);
+    const menuRecebido = objetoRetornado3.fetchMenu();
+
+    assert.deepStrictEqual(menuRecebido, menuEsperado, 'O menu recebido de fetchMenu deve ser o mesmo passado para createMenu');
+
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
