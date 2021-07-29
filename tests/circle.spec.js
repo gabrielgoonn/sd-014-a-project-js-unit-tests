@@ -40,5 +40,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.strictEqual(circle(3).area, 28.259999999999998);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     assert.strictEqual(circle(3).radius, 3);
+    assert.strictEqual(circle(3).area, 28.259999999999998);
+    assert.strictEqual(circle(3).circumference, 18.84);
   });
 });
