@@ -26,7 +26,7 @@ describe('5 - Implemente a função `createStudent`', () => {
   it('Verifica se a função `createStudent` retorna o objeto esperado', () => {
     const estudante = createStudent('Leandrão, o Lobo Solitário');
     assert.strictEqual(typeof estudante, 'object');
-    assert.strictEqual(typeof estudante.feedback, 'function');
+    assert.strictEqual(typeof estudante.feedback, 'function'); //
     assert.strictEqual(estudante.name, 'Leandrão, o Lobo Solitário');
     assert.strictEqual(estudante.feedback(), goodPerson);
 
