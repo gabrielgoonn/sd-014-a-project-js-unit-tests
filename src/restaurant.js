@@ -82,10 +82,22 @@
 // isso aqui é <gus>maaaravilhoso</gus>!
 const restaurant = {};
 
+const calculatePayment = () => {
+  const menu = restaurant.fetchMenu();
+  const menuEntries = {
+    ...menu.food,
+    ...menu.drink,
+  };
+  const sum = restaurant.consumption.reduce((total, item) => total + menuEntries[item], 0);
+  const tax = sum * 0.1;
+  return sum + tax;
+};
+
 const createMenu = (menu) => {
   restaurant.fetchMenu = () => menu;
   restaurant.consumption = [];
   restaurant.order = (request) => restaurant.consumption.push(request);
+  restaurant.pay = calculatePayment;
   return restaurant;
 };
 
