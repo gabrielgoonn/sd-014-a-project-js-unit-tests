@@ -93,10 +93,19 @@ const calculatePayment = () => {
   return sum + tax;
 };
 
+const orderRequest = (request) => {
+  const { food, drink } = restaurant.fetchMenu();
+  if (food[request] || drink[request]) {
+    restaurant.consumption.push(request);
+  } else {
+    throw Error(`Erro: não existe ${request} no menu`);
+  }
+};
+
 const createMenu = (menu) => {
   restaurant.fetchMenu = () => menu;
   restaurant.consumption = [];
-  restaurant.order = (request) => restaurant.consumption.push(request);
+  restaurant.order = orderRequest;
   restaurant.pay = calculatePayment;
   return restaurant;
 };
