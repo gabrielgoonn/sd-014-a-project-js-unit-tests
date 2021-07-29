@@ -26,7 +26,7 @@ const calculator = {
     const resposta = num1 / num2;
     return Math.floor(resposta);
   },
-  sub: (num1, num2) => num1 - num2
+  sub: (num1, num2) => num1 - num2,
 };
 
 module.exports = calculator;
