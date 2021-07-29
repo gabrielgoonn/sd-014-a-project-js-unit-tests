@@ -84,11 +84,11 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
-    // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.order("coxinha");
-    // objetoRetornado.consumption // Retorno: ["coxinha"]
-    // ```
+    assert.strictEqual(typeof objetoRetornado3.order, 'function', 'O objeto retornado precisa ter uma função chamada order');
+    
+    objetoRetornado3.order('coxinha');
+    assert.deepStrictEqual(objetoRetornado3.consumption, ['coxinha'], 'Ao fazer um pedido de coxinha, a função order deve adicionar o pedido em consuption');
+
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
