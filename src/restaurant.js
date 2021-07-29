@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
   cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
@@ -47,12 +45,6 @@
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 //
-const consumptionArray = [];
-
-const createMenu = (obj) => ({
-  fetchMenu: () => obj,
-  consumption: consumptionArray,
-});
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -84,5 +76,31 @@ const createMenu = (obj) => ({
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+
+const createMenu = (menu) => {
+  const consumptionArray = [];
+  let menuKeys;
+  if (menu) {
+    console.log('teste');
+    menuKeys = Object.keys(menu);
+  }
+  return {
+  fetchMenu: () => menu,
+  consumption: consumptionArray,
+  order: (string) => consumptionArray.push(string),
+  pay: () => {
+    let sum = 0;
+    consumptionArray.forEach((element) => {
+      menuKeys.forEach((key) => {
+        const menuItemPrice = menu[key][element];
+        if (menuItemPrice !== undefined) {
+          sum += menuItemPrice;
+        }
+      });
+    });
+    return parseFloat((sum * 1.1).toPrecision(4));
+  },
+  };
+};
 
 module.exports = createMenu;
