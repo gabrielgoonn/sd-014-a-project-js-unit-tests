@@ -52,7 +52,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui, 
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
     const objetoRetornado1 = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
-    assert.strictEqual(typeof objetoRetornado1, 'function', 'O retorno da função deve ser um objeto');
+    assert.strictEqual(typeof objetoRetornado1, 'object', 'O retorno da função deve ser um objeto');
 
     const tipoDoFetchMenu = typeof objetoRetornado1.fetchMenu;
     assert.strictEqual(tipoDoFetchMenu, 'function', 'O objeto retornado precisa ter uma função fetchMenu');
