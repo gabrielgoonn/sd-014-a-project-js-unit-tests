@@ -46,13 +46,18 @@ OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enq
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    assert.strictEqual(getCharacter(), undefined);
     // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
+    assert.strictEqual(typeof getCharacter('Arya'), 'object');
     // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
+    assert.strictEqual(typeof getCharacter('Brienne'), 'object');
     // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
+    assert.strictEqual(typeof getCharacter('Melissandre'), 'object');
     // Teste se a função se os parâmetros não são Case Sensitive.
+    assert.strictEqual(getCharacter('Arya'), getCharacter('arya'));
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
+    assert.strictEqual(getCharacter('Atanes'), undefined);
   });
 });
