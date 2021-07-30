@@ -30,12 +30,20 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
+    assert.strictEqual(typeof productDetails(), 'object');
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.strictEqual(productDetails.length,2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    assert.strictEqual(typeof productDetails()[0] && typeof productDetails()[1], 'object');
     // Teste que os dois objetos são diferentes entre si.
+    assert.strictEqual(productDetails()[0] !== productDetails()[1], true);
     // Teste que os dois productIds terminam com 123.
+    assert.strictEqual(Object.values(productDetails()[0])[1].productId.indexOf('123') !== -1, true);
   });
 });
+
+//referencia: https://blog.education-ecosystem.com/javascript-como-verificar-se-uma-string-contem-outra-substring/
+
+//agradecimentos: Jonathan Ferreira & Lucas Freitas
