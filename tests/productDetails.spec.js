@@ -30,12 +30,18 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.fail();
+    // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
+    assert.deepStrictEqual(productDetails(), [{name: undefined, details:{productId: 'undefined123'}}, {name: undefined, details: { productId: 'undefined123'}}]);
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.deepStrictEqual(productDetails('Máscara', 'Alcool gel'), [{name: 'Máscara', details: {productId: 'Máscara123'}}, {name: 'Alcool gel', details: {productId: 'Alcool gel123'}}]);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    assert.deepStrictEqual(typeof productDetails(), 'object');
     // Teste que os dois objetos são diferentes entre si.
+    assert.deepStrictEqual(productDetails('Máscara', 'Alcool gel')[0] !== productDetails('Máscara', 'Alcool gel')[1] ? true : false, true);
     // Teste que os dois productIds terminam com 123.
+    assert.strictEqual(productDetails('Máscara', 'Alcool gel')[0].details.productId, 'Máscara123');
+    assert.strictEqual(productDetails('Máscara', 'AlcoolGel')[1].details.productId, 'AlcoolGel123');
   });
 });
