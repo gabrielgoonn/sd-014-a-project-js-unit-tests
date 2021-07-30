@@ -75,8 +75,9 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
       ]
     });
 
-    assert.notStrictEqual(['Arya', 'Brienne', 'Melissandre'], ['Arya', 'Brienne', 'Melissandre'] );
-
+    assert.notStrictEqual(getCharacter('Arya'), 'Arya');
+    assert.notStrictEqual(getCharacter('Brienne'), 'Brienne');
+    assert.notStrictEqual(getCharacter('Melissandre'), 'Melissandre');
     assert.strictEqual(getCharacter('Pedro'), undefined);
   
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined. ok
