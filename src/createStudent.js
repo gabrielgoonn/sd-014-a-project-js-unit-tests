@@ -19,7 +19,7 @@ const createStudent = (nome) => ({
   name: nome,
   feedback: () => 'Eita pessoa boa!',
 });
-const estudante = createStudent("Leandro");
+const estudante = createStudent('leandro');
 console.log(estudante.name);
 
 module.exports = createStudent;
