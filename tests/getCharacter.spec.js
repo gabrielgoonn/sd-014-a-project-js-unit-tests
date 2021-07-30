@@ -48,60 +48,42 @@ OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enq
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
  
-    const charactersObj = {
-      arya: {
-        name: 'Arya Stark',
-        class: 'Rogue',
-        phrases: ['Not today', 'A girl has no name.'],
-      },
-      brienne: {
-        name: 'Brienne Tarth',
-        class: 'Knight',
-        phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
-      },
-      melissandre: {
-        name: 'Melissandre',
-        class: 'Necromancer',
-        phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
-      },
-    };
-    const obj2 = {
-      arya: {
-        name: 'arya stark',
-        class: 'rogue',
-        phrases: ['not today', 'a girl has no name.'],
-      },
-      brienne: {
-        name: 'brienne tarth',
-        class: 'knight',
-        phrases: ['im no lady, your grace.', 'i, brienne of tarth, sentence you to die.'],
-      },
-      melissandre: {
-        name: 'melissandre',
-        class: 'necromancer',
-        phrases: ['death by fire is the purest death.', 'for the night is dark and full of terrors.'],
-      },
-    };
-
-    // const lowerCaseObj = charactersObj.toLowerCase();
-
-    // console.log(lowerCaseObj)
-
-    const characterFunc = getCharacter(charactersObj);
-
     // ESCREVA SEUS TESTES ABAIXO:
-    assert.strictEqual(getCharacter({}), undefined);
-    assert.strictEqual(characterFunc.getCharacter(charactersObj.arya), charactersObj.arya);
-    assert.strictEqual(characterFunc.getCharacter(charactersObj.brienne), charactersObj.brienne);
-    assert.strictEqual(characterFunc.getCharacter(charactersObj.melissandre), charactersObj.melissandre);
-    assert.notStrictEqual(characterFunc.getCharacter(charactersObj.melissandre), undefined);
-    assert.strictEqual(characterFunc.getCharacter(obj2), obj2);
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
-    // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-    // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-    // Teste se a função se os parâmetros não são Case Sensitive.
-    // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
+   
+    assert.strictEqual(getCharacter(), undefined);
+    assert.deepStrictEqual(getCharacter('Arya'), {
+      name: 'Arya Stark',
+      class: 'Rogue',
+      phrases: [ 'Not today', 'A girl has no name.' ]
+    });
+
+    assert.deepStrictEqual(getCharacter('Brienne'), {
+      name: 'Brienne Tarth',
+      class: 'Knight',
+      phrases: [
+        'Im No Lady, Your Grace.',
+        'I, Brienne Of Tarth, Sentence You To Die.'
+      ]
+    });
+
+    assert.deepStrictEqual(getCharacter('Melissandre'), {
+      name: 'Melissandre',
+      class: 'Necromancer',
+      phrases: [
+        'Death By Fire Is The Purest Death.',
+        'For The Night Is Dark And Full Of Terrors.'
+      ]
+    });
+
+    assert.notStrictEqual(['Arya', 'Brienne', 'Melissandre'], ['Arya', 'Brienne', 'Melissandre'] );
+
+    assert.strictEqual(getCharacter('Pedro'), undefined);
+  
+    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined. ok
+    // Teste se a função retorna o objeto correto para o parâmetro 'Arya', ok
+    // Teste se a função retorna o objeto correto para o parâmetro 'Brienne', ok
+    // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre', ok
+    // Teste se a função se os parâmetros não são Case Sensitive. ok
+    // Teste se ao passar um nome que não está na tabela, a função retorna undefined. ok
   });
 });
