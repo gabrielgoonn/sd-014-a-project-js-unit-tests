@@ -38,4 +38,8 @@ const productDetails = (firstProduct, secondProduct) => [{
   },
 ];
 
+// Logica para teste
+// const arrayRetornado = productDetails('alcool', 'gel');
+// console.log(arrayRetornado[0].details.productId);
+
 module.exports = productDetails;
