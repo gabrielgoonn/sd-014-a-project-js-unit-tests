@@ -41,7 +41,9 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois objetos são diferentes entre si.
     
     // Teste que os dois productIds terminam com 123.
-    
+    const firstProductDetails = productDetails()[0].details.productId.substr(-3);
+    const secondProductDetails = productDetails()[0].details.productId.substr(-3);
+    assert.strictEqual(firstProductDetails && secondProductDetails, '123');
     //assert.strictEqual()
 
   });
