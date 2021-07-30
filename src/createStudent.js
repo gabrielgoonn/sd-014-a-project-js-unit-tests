@@ -21,4 +21,6 @@ const createStudent = (nome) => [
     feedback: () => 'Eita pessoa boa!',
   },
 ];
+const estudante = createStudent('Leandrão, o Lobo solitario');
+console.log(createStudent());
 module.exports = createStudent;
