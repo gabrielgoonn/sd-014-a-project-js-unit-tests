@@ -29,3 +29,5 @@ const circle = (radius) => {
 };
 
 module.exports = circle;
+// console.log(Object.values(circle(3)));
+// console.log([3, 3.14 * 3 * 3, 2 * 3.14 * 3]);
