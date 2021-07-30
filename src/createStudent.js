@@ -14,7 +14,18 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
+// (lembrar da utilização desses senhores);
 
-const createStudent = () => {};
+const createStudent = (nome) => ({
+    name: nome,
+    feedback: () => 'Eita pessoa boa!',
 
+ });
+
+// const estudante = createStudent('Leandrão, o Lobo Solitário');
+// console.log(createStudent('Leandrão, o Lobo Solitário'));
+// console.log(feedback());
 module.exports = createStudent;
+
+// by Filipe ();
+// by Pally generator; 
