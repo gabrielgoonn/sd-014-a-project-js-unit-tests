@@ -79,6 +79,26 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// https://github.com/tryber/sd-014-a-project-js-unit-tests/pull/1/files código do Marcello sempre ensinando demais!!!
+function addConsumption(string) { 
+  return this.consumption.push(string);
+ }
 
+function sumConsumption() {
+  const menu = this.fetchMenu();  
+  let pay = this.consumption.reduce((total, index) => {
+    if (Object.keys(menu.food).includes(index)) total += menu.food[index];
+    else if (Object.keys(menu.drinks).includes(index)) total += menu.drinks[index];
+    return total;
+  }, 0);
+  return parseFloat((pay * 1.1).toPrecision(4));
+}
+
+const createMenu = (obj) => ({
+  fetchMenu: () => obj,
+  consumption: [],
+  order: addConsumption,
+  pay: sumConsumption,
+});
+ 
 module.exports = createMenu;
