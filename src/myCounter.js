@@ -16,7 +16,7 @@
 */
 
 const myCounter = () => {
-  var myArray = [];
+  let myArray = [];
   for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
     for (let counter2 = 2; counter2 <= 3; counter2 += 1) {
@@ -26,5 +26,7 @@ const myCounter = () => {
   return myArray;
 };
 // console.log(myCounter());
+// DICA DE TROCAR VAR POR LET DOS COLEGAS DOUGLAS SOUZA E MATHEUS SOUZA EM ESTUDO CONJUNTO
+// LET NÃO VAZA ESCOPO.
 
 module.exports = myCounter;
