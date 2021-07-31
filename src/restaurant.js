@@ -79,20 +79,25 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = (ob) => ({ fetchMenu: () => ob });
+// PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
+//
+// Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
+
+//------------------------------------------------------------------------------------------
+const createMenu = function (ob) {
+  return { 
+    fetchMenu: () => ob, 
+  };
+};
 
 module.exports = createMenu;
+//  const assert = require('assert');
 
-const assert = require('assert');
+const obj = { 
+  food: {}, drink: {},
+};
 
-const objetoRetornado = createMenu({ food: {}, drink: {} });
-
-/*  console.log(typeof objetoRetornado);
-console.log(Object.keys(objetoRetornado)[0]);
-console.log(Object.values(objetoRetornado)[0]);
-
-assert.deepStrictEqual(typeof objetoRetornado, 'object');
-assert.deepStrictEqual(Object.keys(objetoRetornado)[0], 'fetchMenu');
-assert.deepStrictEqual(typeof(Object.values(objetoRetornado)[0]), 'function');  */
-
-console.log((objetoRetornado.fetchMenu()));
+const objetoRetornado = createMenu(obj);
+console.log(typeof objetoRetornado); // Teste 1
+console.log(objetoRetornado.fetchMenu()); //  Testes 2 e 3
+//  assert.deepStrictEqual(objetoRetornado.fetchMenu(), obj);
