@@ -19,6 +19,7 @@ const average = (array) => {
     return undefined;
   }
   let soma = array.reduce((total, item) => total + item, 0);
-  let media = (soma / array.length);
+  let media = Math.round((soma / array.length));
   return media;
 };
+module.exports = average;
