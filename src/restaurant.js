@@ -81,28 +81,27 @@ const { TestScheduler } = require('jest');
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const payment = (obj, item) => {
-  for (let secao in obj) {
-    if (obj[secao][item]) {
-      return obj[secao][item];
-    }
-  }
-};
-
-const createMenu = (obj) => {
-  let thisMenu = {
-    fetchMenu: () => obj,
+const createMenu = (cardapio) => {
+  const menu = {
+    fetchMenu: () => cardapio,
     consumption: [],
-    order(string) { this.consumption.push(string); },
+    order(pedido) {
+      menu.consumption.push(pedido);
+    },
     pay() {
       let preco = 0;
-      for (let i = 0; i < this.consumption.length; i += 1) {
-        preco += payment(this.fetchMenu(), this.consumption[i]);
-      }
-      return (preco * 1.1).toPrecision(4);
-    },
+      let precoFinal;
+      menu.consumption.forEach(e => {
+        for (let secao in cardapio) {
+          if (cardapio[secao][e]) preco += cardapio[secao][e];
+        }
+      })
+      precoFinal = (preco * 1.1).toPrecision(4);
+      return precoFinal;
+    }
   };
-  return thisMenu;
-};
+  return menu;
+}
 
 module.exports = createMenu;
+
