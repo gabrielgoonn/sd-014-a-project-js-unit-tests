@@ -80,7 +80,7 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = () => {
-  const createMenu = [
+  const meuRestaurante = [
     { 
       coxinha: 3.9, 
       cerveja: 6.9,
@@ -88,8 +88,8 @@ const createMenu = () => {
     {
       sopa: 5.5,
       agua: 3.9, 
-    }
-  ]
+    },
+  ];
 };
 
 module.exports = createMenu;
