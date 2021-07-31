@@ -91,17 +91,16 @@ const createMenu = (cardapio) => {
     pay() {
       let preco = 0;
       let precoFinal;
-      menu.consumption.forEach(e => {
+      menu.consumption.forEach((e) => {
         for (let secao in cardapio) {
           if (cardapio[secao][e]) preco += cardapio[secao][e];
         }
-      })
+      });
       precoFinal = (preco * 1.1).toPrecision(4);
       return precoFinal;
-    }
+    },
   };
   return menu;
-}
+};
 
 module.exports = createMenu;
-
