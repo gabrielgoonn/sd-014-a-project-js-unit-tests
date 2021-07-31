@@ -47,9 +47,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.notDeepStrictEqual(objects[0], objects[1]);
 
     // Teste que os dois productIds terminam com 123.
-    const productdIds = [objects[0].details.productId, objects[1].details.productId];
-    const testString = '123';
-    const testIncludesString = productdIds.every((element) => element.includes(testString));
-    assert.strictEqual(testIncludesString, true);
+    const test = objects.map( (product) => product.details.productId).every( (element) => element.endsWith('123'));
+    assert.strictEqual(test, true);
   });
 });
