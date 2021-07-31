@@ -13,22 +13,15 @@
 */
 // vqv
 
-const testElements = (array) => {
-  let result;
-  result = array.some((element) => typeof (element) !== 'number' || Number.isNaN(element));
-  return result;
-};
+const testElements = (arr) => arr.some((ele) => typeof (ele) !== 'number' || Number.isNaN(ele));
 
 const average = (array) => {
-  if (Array.isArray(array)) {
     if (array.length === 0 || testElements(array)) {
       return undefined;
     }
     const sum = array.reduce((acc, element) => acc + element);
     const avg = Math.round(sum / array.length);
-    return avg;
-  }
-  return undefined;
+    return avg;  
 };
 
 module.exports = average;
