@@ -85,34 +85,34 @@ const pedido = (item) => {
   meuRestaurante.consumption.push(item);
 }
 
-
 const createMenu = (objetoMenu) => {
-  return {
+  const menu = {
     fetchMenu: () => objetoMenu,
     consumption: [],
-    order: (consumo) => {
-      pedido(consumo);
+    order: (consumo, ) => {
+      menu.consumption.push(consumo);
     }
   }
-
+  return menu;
 }
 
-const meuRestaurante = createMenu(//{
-  //food: {
-  //  'coxinha': 3.90,
-  //  'sanduiche': 9.90
-  //},
-  //drinks: {
-  //  'agua': 3.90,
-  //  'cerveja': 6.90
-  //}
-//}
+
+
+const meuRestaurante = createMenu({
+  food: {
+    'coxinha': 3.90,
+    'sanduiche': 9.90
+  },
+  drinks: {
+    'agua': 3.90,
+    'cerveja': 6.90
+  }
+}
 );
+meuRestaurante.order('coxinha');
 
-
-
-meuRestaurante.order('coxinha')
 
 console.log(meuRestaurante.consumption);
+//assert.deepStrictEqual(meuRestaurante.consumption, ['coxinha'])
 
 module.exports = createMenu;
