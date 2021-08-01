@@ -13,17 +13,17 @@
 */
 
 const average = (array) => {
-  if(array.length === 0) {
+  if (array.length === 0) {
     return undefined;
   }
   let soma = 0;
-  for(let index = 0; index < array.length; index += 1 ) {
-    if(Number.isNaN(array[index]) || (typeof(array[index]) === "string")) {
+  for (let index = 0; index < array.length; index += 1) {
+    if (Number.isNaN(array[index]) || (typeof (array[index]) === 'string')) {
       return undefined;
     }
     soma += array[index];
   }
-  return Math.round(soma/array.length);
+  return Math.round(soma / array.length);
 };
 
 module.exports = average;
