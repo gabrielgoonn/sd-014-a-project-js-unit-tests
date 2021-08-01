@@ -52,6 +52,7 @@ describe('9 - Implemente os casos de teste para a função `getCharacter`', () =
     assert.deepStrictEqual(getCharacter('Brienne'), { name: 'Brienne Tarth', class: 'Knight', phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'] })
     assert.deepStrictEqual(getCharacter('Melissandre'), { name: 'Melissandre', class: 'Necromancer', phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'] })
     assert.strictEqual(getCharacter('Brienne'), getCharacter('BRIENNE'))
+    // Fazer referência ao Paulo Sordi
     assert.strictEqual(getCharacter('anyName'), undefined)
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
