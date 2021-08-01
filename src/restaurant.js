@@ -78,28 +78,30 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
-// PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-//
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
-const createMenu = function (ob) {
-  return { 
-    fetchMenu: () => ob,
-    consumption: [],
-  };
-};
-
-module.exports = createMenu;
-//  const assert = require('assert');
-
+//  this.consumption.push(pedido) foi sorte. Não conhecia o comando, mas quando dei TAB no consumption ele apareceu sozinho.
 const obj = { 
   food: {}, drink: {},
 };
 
+const createMenu = function (ob) {
+  return { 
+    fetchMenu: () => ob,
+    consumption: [],
+    order: function pedidos(pedido) {
+      this.consumption.push(pedido);
+    },
+  };
+};
 const objetoRetornado = createMenu(obj);
+
+module.exports = createMenu;
+const assert = require('assert');
+
 //  console.log(typeof objetoRetornado); // Teste 1
 //  console.log(objetoRetornado.fetchMenu()); //  Testes 2 e 3
 //  console.log(objetoRetornado.consumption); //  Teste 4
-//  assert.deepStrictEqual(objetoRetornado.fetchMenu(), obj);
+//  objetoRetornado.order('coxinha');
+//  console.log(objetoRetornado.consumption); //  Teste 5
