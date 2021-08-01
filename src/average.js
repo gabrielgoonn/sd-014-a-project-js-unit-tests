@@ -13,5 +13,6 @@
 */
 
 const average = () => {};
+//codigo aqui
 
 module.exports = average;
