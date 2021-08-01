@@ -80,5 +80,6 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (param) => ({ fetch: () => param });
-
+const input = prompt('type something')
+alert(`digite ${input}`)
 module.exports = createMenu;
