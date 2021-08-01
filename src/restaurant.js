@@ -84,16 +84,23 @@ function pedido(order) {
   cliente.consumption.push(order);
 }
 
-function conta() {
-  
-}
-
-const createMenu = (objeto) => {
+const createMenu = (menu) => {
   cliente = {
-    fetchMenu: () => objeto,
+    fetchMenu: () => menu,
     consumption: [],
     order: pedido,
-    pay: conta,
+    pay: () => {
+      let total = 0;
+      const itensPedidos = cliente.consumption;
+      itensPedidos.forEach((item) => {
+        if (menu.food[item]) {
+          total += menu.food[item];
+        } else {
+          total += menu.drink[item];
+        }
+      });
+    return total * 1.1;
+    },
   };
   return cliente;
 };
