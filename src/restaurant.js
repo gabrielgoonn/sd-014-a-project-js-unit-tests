@@ -89,8 +89,10 @@ const createMenu = (objetoMenu) => {
   const menu = {
     fetchMenu: () => objetoMenu,
     consumption: [],
-    order: (consumo, ) => {
-      menu.consumption.push(consumo);
+    order: (consumo) => {
+     if (menu.consumption[menu.consumption.length-1] !== consumo){
+      menu.consumption.push(consumo)
+     }
     }
   }
   return menu;
@@ -109,8 +111,6 @@ const meuRestaurante = createMenu({
   }
 }
 );
-meuRestaurante.order('coxinha');
-
 
 console.log(meuRestaurante.consumption);
 //assert.deepStrictEqual(meuRestaurante.consumption, ['coxinha'])
