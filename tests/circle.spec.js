@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
+const { parse } = require('path');
+const { PassThrough } = require('stream');
 const circle = require('../src/circle');
 
 /*
@@ -23,6 +25,14 @@ const circle = require('../src/circle');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
+const transNum = circle(3);
+transNum.area = parseFloat(transNum.area.toPrecision(4));
+
+const expected = {
+  radius: 3, 
+  area: 28.26, 
+  circumference: 18.84,
+};
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
@@ -38,6 +48,6 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
       // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     assert.strictEqual(parseFloat(Object.values(circle(3))[1].toPrecision(4)), 28.26);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.strictEqual(Object.values(circle(3)), [3, 28.26, 18.84]);
+    assert.deepStrictEqual(transNum, expected);
   });
 });
