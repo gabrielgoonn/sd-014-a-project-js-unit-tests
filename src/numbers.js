@@ -20,7 +20,7 @@ const numbers = (myArray) => {
 };
 
 describe('#numbers', () => {
-  it('Verifica se a função `numbers`retorna `true` quando o array contém apenas numeros e falso caso contrário', () => {
+  it('Verifica se a função numbers retorna true quando o array contém apenas numeros e falso caso contrário', () => {
     assert.strictEqual(numbers([1, 2, 3, 4, 5]), true);
     assert.strictEqual(numbers([1, 2, 3, 4, '5']), false);
     assert.strictEqual(numbers([1, 'l', 3]), false);
