@@ -36,7 +36,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     // Teste que os dois objetos são diferentes entre si.
     // Teste que os dois productIds terminam com 123.
-    const aux = productDetails('teclado', 'mouse');
+    const aux = productDetails('Alcool gel', 'Máscara');
     assert.strictEqual(Array.isArray(aux), true);
     assert.strictEqual(aux.length, 2);
     assert.strictEqual(aux.every((produto) => typeof produto === 'object'), true);
