@@ -99,7 +99,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("sopa");
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
-    // ```
+    // ````
     objetoRetornado.consumption = [];
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
