@@ -42,6 +42,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepStrictEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Máscara')[1]);
     // Teste que os dois productIds terminam com 123.
+    // Aprendi sobre o substr em: https://stackoverflow.com/questions/5873810/how-can-i-get-last-characters-of-a-string
     const produto1 = productDetails('Alcool gel', 'Máscara')[0].details.productId;
     assert.strictEqual(produto1.substr(produto1.length - 3), '123');
     const produto2 = productDetails('Alcool gel', 'Máscara')[1].details.productId;
