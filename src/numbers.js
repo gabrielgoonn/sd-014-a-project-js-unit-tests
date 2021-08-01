@@ -18,4 +18,14 @@ const numbers = (myArray) => {
   return true;
 };
 
+describe('#n', () => {
+  it('Retorna se conter somente números ou não!', () => {
+    assert.strictEqual(n([1, 2, 3, 4, 5]), true);
+    assert.strictEqual(n([1, 2, '3', 4, 5]), false);
+    assert.strictEqual(n([1, 'a', 3]), false);
+    assert.strictEqual(n(['']), true);
+  });
+});
+
 module.exports = numbers;
+
