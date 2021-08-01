@@ -81,10 +81,6 @@
 
 const assert = require('assert');
 
-const pedido = (item) => {
-  meuRestaurante.consumption.push(item);
-}
-
 const createMenu = (objetoMenu) => {
   const menu = {
     fetchMenu: () => objetoMenu,
