@@ -101,5 +101,5 @@ const obj = {
 const objetoRetornado = createMenu(obj);
 //  console.log(typeof objetoRetornado); // Teste 1
 //  console.log(objetoRetornado.fetchMenu()); //  Testes 2 e 3
-//  console.log(objetoRetornado.consumption);
+//  console.log(objetoRetornado.consumption); //  Teste 4
 //  assert.deepStrictEqual(objetoRetornado.fetchMenu(), obj);
