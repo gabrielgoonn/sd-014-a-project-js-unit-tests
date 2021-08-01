@@ -83,15 +83,34 @@
 //------------------------------------------------------------------------------------------
 //  this.consumption.push(pedido) foi sorte. Não conhecia o comando, mas quando dei TAB no consumption ele apareceu sozinho.
 const obj = { 
-  food: {}, drink: {},
+  food: { coxinha: 3.9, sopa: 9.9, sashimi: 15.9 }, 
+  drink: { agua: 4.9, cerveja: 6.9 },
 };
 
-const createMenu = function (ob) {
+const createMenu = function (objeto) {
   return { 
-    fetchMenu: () => ob,
+    fetchMenu: () => objeto,
     consumption: [],
     order: function pedidos(pedido) {
       this.consumption.push(pedido);
+    },
+    pay: function somaPedidos() {
+      const produtosPedidos = this.consumption.map((produto) => produto);
+      let precosComidas = Object.values(this.fetchMenu())[0];
+      let precosBebidas = Object.values(this.fetchMenu())[1];
+      const precos = { ...precosBebidas, ...precosComidas };
+      let comanda = 0;
+      function verifica() {
+        produtosPedidos.forEach((itemPedido) => {
+          Object.keys(precos).forEach((itemPreco, index) => {
+            if (itemPedido === itemPreco) {
+              comanda += (Object.values(precos)[index]);
+            }
+          });
+        }); 
+      }
+      verifica();
+      return (parseFloat((comanda * 1.1).toPrecision(4)));
     },
   };
 };
@@ -105,3 +124,8 @@ const assert = require('assert');
 //  console.log(objetoRetornado.consumption); //  Teste 4
 //  objetoRetornado.order('coxinha');
 //  console.log(objetoRetornado.consumption); //  Teste 5
+//  objetoRetornado.order('coxinha');
+//  objetoRetornado.order('agua');
+//  objetoRetornado.order('sopa');
+//  console.log(objetoRetornado.pay());
+//  console.log(objetoRetornado.consumption);
