@@ -43,6 +43,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois productIds terminam com 123.
     const Entry1 = productDetails()[0].details.productId.slice(-3);
     const Entry2 = productDetails()[1].details.productId.slice(-3);
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
     assert.strictEqual(Entry1.endsWith('123'), true);
     assert.strictEqual(Entry2.endsWith('123'), true);
   });
