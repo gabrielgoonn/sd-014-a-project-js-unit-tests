@@ -79,6 +79,26 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = () => ({ // - Definir a função `createMenu()`
+
+});
 
 module.exports = createMenu;
+ 
+// Crie uma função, separada da função `createMenu()`
+const func = (string) => obj.consumption.push(string); // dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`.   que, dAdicione essa função à chave `order`
+
+// função com objeto dentro e com duas funções dentro 
+
+// objeto: três
+
+// - Definir o objeto que a `createMenu()` retorna, mas separadamente 
+// - E, depois, definir a função que será atribuída a `order`.
+// ```
+// const restaurant = {}
+//
+// const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
+//
+// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
+// // Essa função deve ser associada à chave `order` de `restaurant`
+// ```
