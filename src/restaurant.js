@@ -124,8 +124,10 @@ const assert = require('assert');
 //  console.log(objetoRetornado.consumption); //  Teste 4
 //  objetoRetornado.order('coxinha');
 //  console.log(objetoRetornado.consumption); //  Teste 5
-//  objetoRetornado.order('coxinha');
-//  objetoRetornado.order('agua');
-//  objetoRetornado.order('sopa');
+objetoRetornado.order('coxinha');
+objetoRetornado.order('agua');
+objetoRetornado.order('coxinha');
+assert.deepStrictEqual(objetoRetornado.pay(), 13.97);
 //  console.log(objetoRetornado.pay());
+//  console.log(objetoRetornado.pay);
 //  console.log(objetoRetornado.consumption);

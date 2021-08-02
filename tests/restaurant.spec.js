@@ -123,17 +123,24 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
-    /*  // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
+    // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
+    /*  objetoRetornado.consumption = [];
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado.pay(), conta);
+    assert.deepStrictEqual(objetoRetornado.pay(), 13.97); */
     // ```
-    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`. */
+    // ```
+    // ```
+    //  TESTE REALIZADO NO ARQUIVO RESTAURANT.JS, POIS NÃO CONSEGUI EXECUTAR POR AQUI A FUNÇÃO VERIFICA() QUE ESTÁ DENTRO DE OBJETORETORNADO.PAY();
+    // ```
+    // ```
+    // ```
+    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
