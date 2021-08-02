@@ -17,8 +17,8 @@ const average = (array) => {
     return undefined;
   }
 
-  for ( let i = 0; i < array.length; i += 1 ) {
-    if (typeof(array[i]) !== 'number'){
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
       return undefined;
     }
   }
@@ -27,13 +27,13 @@ const average = (array) => {
   let valoresArredondados = [];
   let total = null;
   
-  for ( let i = 0; i < array.length; i += 1 ) {
-    valoresArredondados += Math.round(array[i]);
-  }
+  array.forEach((element) => {
+    valoresArredondados += Math.round(element);
+  });
 
-  for ( let i = 0; i < array.length; i += 1 ) {
-    media += array[i];
-  }
+  array.forEach((element) => {
+    media += element;
+  });
 
   total = media / array.length;
 
