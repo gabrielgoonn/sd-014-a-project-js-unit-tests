@@ -80,9 +80,7 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const assert = require('assert');
-const {
-  type
-} = require('os');
+
 
 const createMenu = (objetoMenu) => {
   const menu = {
@@ -95,9 +93,9 @@ const createMenu = (objetoMenu) => {
     },
     pay: () => {
       let output = 0;
-      const itensMenu = Object.values(menu.fetchMenu(objetoMenu));
+      //const itensMenu = Object.values(menu.fetchMenu(objetoMenu));
       menu.consumption.forEach((itemConsumo) => {
-        itensMenu.map((listaItensMenu) => {
+        Object.values(menu.fetchMenu(objetoMenu)).map((listaItensMenu) => {
           Object.keys(listaItensMenu).map((item, index) => {
             if (item === itemConsumo) {
               output += Object.values(listaItensMenu)[index];
@@ -106,7 +104,7 @@ const createMenu = (objetoMenu) => {
         })
       })
       output *= 1.10
-      return output.toFixed(2);
+      return  output.toFixed(2)
     }
   }
   return menu
@@ -128,7 +126,7 @@ meuRestaurante.order('agua');
 meuRestaurante.order('coxinha');
 
 
-
-assert.strictEqual(meuRestaurante.pay(), '12.87' );
+console.log(meuRestaurante.pay());
+//assert.strictEqual(meuRestaurante.pay(), '12.87' );
 
 module.exports = createMenu;
