@@ -89,13 +89,13 @@ const createMenu = (myMenu) => {
     pay: () => {
       let sum = 0;
       const consum = restaurant.consumption;
-      for (let index = 0; index < consum.length; index += 1) {
-        if (myMenu.food[consum[index]]) {
-          sum += myMenu.food[consum[index]];
-        } else if (myMenu.drink[consum[index]]) {
-          sum += myMenu.drink[consum[index]];
+      consum.forEach((item) => {
+        if (myMenu.food[item]) {
+          sum += myMenu.food[item];
+        } else if (myMenu.drink[item]) {
+          sum += myMenu.drink[item];
         }
-      }
+      });
       return sum + (sum * 0.1);
     },
   });
