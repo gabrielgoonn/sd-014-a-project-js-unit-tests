@@ -1,6 +1,5 @@
 const assert = require('assert');
 const calculator = require('../src/objCalculator');
-
 /*
   Desenvolva um objeto calculator que possui quatro chaves:
     - add;

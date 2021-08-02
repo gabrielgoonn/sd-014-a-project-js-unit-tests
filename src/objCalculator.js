@@ -19,6 +19,18 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const soma = (param1, param2) => param1 + param2;
+const multiplicacao = (param1, param2) => param1 * param2;
+const divicao = (param1, param2) => Math.floor(param1 / param2); 
+const subtracao = (param1, param2) => param1 - param2;
+
+const calculator = {
+  add: soma,
+  mult: multiplicacao,
+  div: divicao,
+  sub: subtracao,
+};
+
+console.log(calculator.add(1, 3));
 
 module.exports = calculator;
