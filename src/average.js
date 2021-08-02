@@ -15,7 +15,7 @@
 const average = (number) => {
   let roundNumber = Math.round(number);
   let finalNumber = 0;
-  if (typeof number === "number") {
+  if (typeof number === 'number') {
   }
   for (let index = 0; roundNumber.length < index; index += 1) {
     finalNumber += roundNumber[index];
