@@ -79,54 +79,42 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const assert = require('assert');
-
-
 const createMenu = (objetoMenu) => {
   const menu = {
-    fetchMenu: (objetoMenu) => objetoMenu,
+    fetchMenu: () => objetoMenu,
     consumption: [],
     order: (consumo) => {
       if (menu.consumption[menu.consumption.length - 1] !== consumo) {
-        menu.consumption.push(consumo)
+        menu.consumption.push(consumo);
       }
     },
     pay: () => {
       let output = 0;
-      //const itensMenu = Object.values(menu.fetchMenu(objetoMenu));
       menu.consumption.forEach((itemConsumo) => {
-        Object.values(menu.fetchMenu(objetoMenu)).map((listaItensMenu) => {
-          Object.keys(listaItensMenu).map((item, index) => {
+        Object.values(menu.fetchMenu(objetoMenu)).forEach((listaItensMenu) => {
+          Object.keys(listaItensMenu).forEach((item, index) => {
             if (item === itemConsumo) {
               output += Object.values(listaItensMenu)[index];
             }
-          })
-        })
-      })
-      output *= 1.10
-      return  output.toFixed(2)
-    }
-  }
-  return menu
-}
+          });
+        });
+      });
+      output *= 1.10;
+      return output.toFixed(2);
+    },
+  };
+  return menu;
+};
 
 const meuRestaurante = createMenu({
   food: {
-    'coxinha': 3.90,
-    'sanduiche': 9.90
+    coxinha: 3.90,
+    sanduiche: 9.90,
   },
   drinks: {
-    'agua': 3.90,
-    'cerveja': 6.90
-  }
+    agua: 3.90,
+    cerveja: 6.90,
+  },
 });
-
-meuRestaurante.order('coxinha');
-meuRestaurante.order('agua');
-meuRestaurante.order('coxinha');
-
-
-console.log(meuRestaurante.pay());
-//assert.strictEqual(meuRestaurante.pay(), '12.87' );
 
 module.exports = createMenu;
