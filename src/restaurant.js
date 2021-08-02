@@ -82,6 +82,7 @@
 const createMenu = (myMenu) => {
   const meuRestaurante = {
     fetchMenu: () => myMenu,
+    consumption: [],
   };
   return meuRestaurante;
 };
