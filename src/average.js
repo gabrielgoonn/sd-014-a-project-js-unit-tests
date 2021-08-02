@@ -12,7 +12,22 @@
     - average([1, '2']) // Retorno: undefined;
     jhon
 */
+const average = (arrays) => {
+  let sum = 0;
+  if (arrays.length === 0) {
+    return undefined;
+  }
+  // eslint-disable-next-line no-plusplus
+  for (let index = 0; index < arrays.length; index += 1) {
+    if (typeof arrays[index] !== 'number') {
+      return undefined;
+    }
+    sum += arrays[index];
+  }
+  let med = Math.round(sum / arrays.length);
+  return med;
+};
 
-const average = () => {};
+console.log(average([3, 4, 5]));
 
 module.exports = average;
