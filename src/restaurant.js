@@ -83,10 +83,10 @@ const createMenu = (menu) => ({
   });
   this.consumption.forEach((bill) => {
     if (menu.drink[bill]) {
-      conta += menu.fetchMenu.drink[bill];
+      conta += menu.drink[bill];
     }
-    });
-    return (conta + conta * 0.1); 
-},
+  });
+    return (conta + conta * 1.1); 
+  },
 });
 module.exports = createMenu;

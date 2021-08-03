@@ -104,7 +104,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
-    somaDosPreçosDosPedidos = ((3.9 * 3) + (3.9 * 3 * 0.1))
+    let somaDosPreçosDosPedidos = ((3.9 * 3) + (3.9 * 3 * 0.1))
     assert.deepStrictEqual(objetoRetornado.pay(), somaDosPreçosDosPedidos);
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
