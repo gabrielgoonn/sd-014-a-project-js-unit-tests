@@ -49,13 +49,9 @@
 //
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
-//------------------------------------------------------------------------------------------
-
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 //
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
-
-//------------------------------------------------------------------------------------------
 
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
@@ -73,32 +69,35 @@
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
-//------------------------------------------------------------------------------------------
-
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => ({ // - Definir a função `createMenu()`
+// Crie uma função, separada da função `createMenu()`
+// dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
+// o this faz referência ao objeto do qual a função é uma propriedade, o this faz referência ao objeto que está chamando a função no momento.
+function consumo(string) {
+  this.consumption.push(string);
+}
 
+let total = 0;
+const createMenu = (obj) => ({ // parâmetro: um objeto 
+  fetchMenu: () => obj, // Uma chave `fetchMenu` retorna o objeto que a função `createMenu` recebe por parâmetro.
+  consumption: [], // Uma chave `consumption`(comanda aberta) que contém um array de strings, com cada string sendo a chave de um pedido.
+  order: consumo, // registra o pedido ["coxinha"]. Uma chave `order` que tem uma função que, recebida uma string como parâmetro, adiciona essa string à lista salva em `consumption`
+  pay: function pay() { // Uma chave `pay` que, quando chamada, invoca uma função que soma o valor de todos os pedidos e dá o preço com acréscimo de 10%. - A função pode ser uma chave, não necessariamente precisaria do function, poderia ser apenas pay() e já o bloco de código entre {}
+    this.consumption.forEach((item) => { // obtive a ajuda do migo: Lucas Farias (T14A) - no desenrolar dessa função pay
+      if (obj.food[item]) {
+        total += obj.food[item];
+      }
+    });
+    this.consumption.forEach((item) => {
+      if (obj.drinks[item]) {
+        total += obj.drinks[item];
+      }
+    });
+    return total * 1.1;
+  },
 });
 
 module.exports = createMenu;
- 
-// Crie uma função, separada da função `createMenu()`
-const func = (string) => obj.consumption.push(string); // dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`.   que, dAdicione essa função à chave `order`
-
-// função com objeto dentro e com duas funções dentro 
-
-// objeto: três
-
-// - Definir o objeto que a `createMenu()` retorna, mas separadamente 
-// - E, depois, definir a função que será atribuída a `order`.
-// ```
-// const restaurant = {}
-//
-// const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
-//
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
-// // Essa função deve ser associada à chave `order` de `restaurant`
-// ```
