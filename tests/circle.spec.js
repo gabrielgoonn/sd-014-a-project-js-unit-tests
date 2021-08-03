@@ -41,5 +41,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.deepStrictEqual(circle(3).area, 28.259999999999998)
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     assert.deepStrictEqual(circle(3), circle(3))
+
+    // https://www.w3schools.com/nodejs/ref_assert.asp diferenca entre deep e strictEqual,equal
   });
 });

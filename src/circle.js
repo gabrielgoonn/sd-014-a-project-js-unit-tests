@@ -28,4 +28,11 @@ const circle = (radius) => {
   };
 };
 
+// console.log((typeof circle(1)));
+// console.log((Object.keys(circle(1)).length));
+// console.log(circle());
+// console.log((circle(2).circumference));
+// console.log((circle(3).area));
+// console.log((circle(3)));
+
 module.exports = circle;
