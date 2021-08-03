@@ -12,27 +12,30 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ## Sumário
 
+- [Termos de acordos](#termos-de-acordos)
+- [Boas vindas ao repositório do projeto de ES6 e Testes Unitários!](#boas-vindas-ao-repositório-do-projeto-de-es6-e-testes-unitários)
+- [Sumário](#sumário)
 - [Habilidades](#habilidades)
 - [Entregáveis](#entregáveis)
-  - [O que deverá ser desenvolvido](#o-que-será-desenvolvido)
+  - [O que será desenvolvido](#o-que-será-desenvolvido)
   - [Desenvolvimento](#desenvolvimento)
   - [Data de entrega](#data-de-entrega)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+- [Instruções para entregar seu projeto:](#instruções-para-entregar-seu-projeto)
+  - [Antes de começar a desenvolver:](#antes-de-começar-a-desenvolver)
   - [Durante o desenvolvimento](#durante-o-desenvolvimento)
 - [Como desenvolver](#como-desenvolver)
   - [ESLint](#eslint)
 - [Requisitos do projeto](#requisitos-do-projeto)
-  - [1. Implemente a função average](#1-implemente-a-função-average)
-  - [2. Implemente os casos de teste para a função numbers](#2-implemente-os-casos-de-teste-para-a-função-numbers)
-  - [3. Implemente a função vqv](#3-implemente-a-função-vqv)
-  - [4. Implemente os casos de teste para a função circle](#4-implemente-os-casos-de-teste-para-a-função-circle)
-  - [5. Implemente a função createStudent](#5-implemente-a-função-createstudent)
-  - [6. Implemente os casos de teste para a função productDetails](#6-implemente-os-casos-de-teste-para-a-função-productdetails)
-  - [7. Implemente a função objCalculator](#7-implemente-a-função-objcalculator)
-  - [8. Implemente a função myCounter](#8-implemente-a-função-mycounter)
-  - [9. Implemente os casos de teste para a função getCharacter](#9-implemente-os-casos-de-teste-para-a-função-getcharacter)
-  - [10. Implemente os casos de teste e a função createMenu](#10-implemente-os-casos-de-teste-e-a-função-createmenu)
+  - [1. Implemente a função `average`](#1-implemente-a-função-average)
+  - [2. Implemente os casos de teste para a função `numbers`](#2-implemente-os-casos-de-teste-para-a-função-numbers)
+  - [3. Implemente a função `vqv`](#3-implemente-a-função-vqv)
+  - [4. Implemente os casos de teste para a função `circle`](#4-implemente-os-casos-de-teste-para-a-função-circle)
+  - [5. Implemente a função `createStudent`](#5-implemente-a-função-createstudent)
+  - [6. Implemente os casos de teste para a função `productDetails`](#6-implemente-os-casos-de-teste-para-a-função-productdetails)
+  - [7. Implemente a função `objCalculator`](#7-implemente-a-função-objcalculator)
+  - [8. Implemente a função `myCounter`](#8-implemente-a-função-mycounter)
+  - [9. Implemente os casos de teste para a função `getCharacter`](#9-implemente-os-casos-de-teste-para-a-função-getcharacter)
+  - [10. Implemente os casos de teste e a função `createMenu`](#10-implemente-os-casos-de-teste-e-a-função-createmenu)
 - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
 - [Revisando um pull request](#revisando-um-pull-request)
 - [Avisos finais](#avisos-finais)
@@ -117,7 +120,7 @@ module.exports = average
 5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
   * Verifique que as mudanças ainda não estão no _stage_
     * Exemplo: `git status` (deve aparecer listado o arquivo _src/last.js_ em vermelho)
-  * Adicione o arquivo alterado ao _stage_ do Git
+  * Adicione o arquivo alterado ao _stage_ do **Git**
       * Exemplo:
         * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
         * `git status` (deve aparecer listado o arquivo _src/last.js_ em verde)
@@ -368,7 +371,7 @@ A estrutura deste código e deste objeto já foi definida e você irá implement
 
 3. No arquivo `tests/restaurant.spec.js`, escreva um teste que verifica se o menu passado pra função `createMenu` é identico ao menu recuperado pela função `'objetoRetornado.fetchMenu()'`.
 
-4. No arquivo `src/restaurant.js`, crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
+4. No arquivo `src/restaurant.js`, crie uma função `createMenu()` que, dado um  objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 
 5. No arquivo `tests/restaurant.spec.js`, escreva um teste que verifica se `'objetoRetornado.consumption'`, após a criação do menu, retorna um array vazio.
 
