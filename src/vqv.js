@@ -16,18 +16,16 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {
-  
-  if(nome | idade === undefined){
-    return undefined
+const vqv = (nome, idade) => {  
+  if (nome || idade === undefined) {
+    return undefined;
   }
   return `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`;
-
 };
 
 // fonte : ajuda dos colegas
-//https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
+// https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
 module.exports = vqv;
