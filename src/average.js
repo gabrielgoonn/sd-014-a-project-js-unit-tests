@@ -36,6 +36,6 @@ const average = (array) => {
 // fontes:
 // https://onecompiler.com/posts/3vyd4sbdq/finding-the-average-value-of-an-array-in-javascript-using-arrow-functions
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/every
-// idéia dos colegas da trybe
+// idéia dos colegas da trybe.
 
 module.exports = average;
