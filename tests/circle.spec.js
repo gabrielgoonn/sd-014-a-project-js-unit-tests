@@ -41,3 +41,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.deepStrictEqual(circle(3), { radius: 3, area: 28.259999999999998, circumference: 18.84 })
   });
 });
+
+// ajuda dos colegas trybe
+//https://developer.mozilla.org/pt-BR/docs/Web/API/Console/assert
+
