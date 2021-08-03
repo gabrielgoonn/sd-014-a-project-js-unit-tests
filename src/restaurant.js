@@ -90,9 +90,9 @@ const createMenu = (objetoMenu) => {
     },
     pay: () => {
       let output = 0;
-      menu.consumption.forEach((itemConsumo) => {
-        Object.values(menu.fetchMenu(objetoMenu)).forEach((listaItensMenu) => {
-          Object.keys(listaItensMenu).forEach((item, index) => {
+      menu.consumption.forEach((itemConsumo) => { // o primeiro forEach sera o que irá percorrer o array consumption
+        Object.values(menu.fetchMenu(objetoMenu)).forEach((listaItensMenu) => { // como precisamos percorrer o objeto que esta em fetchMenu, entao o objeto se transforma em um array que cada posição é um objeto que contem somente os valores o segundo ForEach sera para percorrer esse array 
+          Object.keys(listaItensMenu).forEach((item, index) => { // cada posição desse array é um objeto precisamos percorre-lo para encontrar a chave que esta em itemConsumo
             if (item === itemConsumo) {
               output += Object.values(listaItensMenu)[index];
             }
@@ -110,11 +110,33 @@ const meuRestaurante = createMenu({
   food: {
     coxinha: 3.90,
     sanduiche: 9.90,
+    pastel: 8.90,
+    picanha: 25.90,
+    sushi: 19.90,
   },
   drinks: {
     agua: 3.90,
     cerveja: 6.90,
+    suco: 6.90,
+    refrigerante: 11.90,
   },
+  sobremesa: {
+    sorvete: 6.90,
+    pudim: 6.90,
+    milkshake: 11.90,
+  }
 });
+
+meuRestaurante.order('sanduiche');
+meuRestaurante.order('pastel');
+meuRestaurante.order('picanha');
+meuRestaurante.order('agua');
+meuRestaurante.order('suco');
+meuRestaurante.order('refrigerante');
+meuRestaurante.order('sorvete');
+meuRestaurante.order('milkshake');
+
+
+console.log(meuRestaurante.pay())// retorna 94.82
 
 module.exports = createMenu;
