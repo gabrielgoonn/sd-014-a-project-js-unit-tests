@@ -84,18 +84,19 @@
 // }
 
 const createMenu = (myMenu) => {
-  const menuRestaurante = {
+  const menu = {
     fetchMenu: () => myMenu, // Passo 1, retorna um objeto qualquer que foi passado como parâmetro
     consumption: [], // Passo 2, recebe inicialmente o array vazio. Vai incluir o order.
-    order: (request) => menuRestaurante.consumption.push(request),
-    pay: () => menuRestaurante.consumption.reduce((acc, current) => {
-       const categoria = Object.values(menuRestaurante.fetchMenu()).find((item) => item[current] !== undefined);
-       // Object.values transforma em array, find pesquisa onde, no array eu tenho coxinha ou agua, nisso ele retorna o objeto inteiro (food ou drink)que contem coxinha ou agua.
-       return acc + categoria[current];
-       // no categoria[current] eu busco dentro do objeto inteiro retornado, apenas o preço do item coxinha ou agua
+    order: (request) => menu.consumption.push(request), // Passo 3, insere as ordens no array consumption
+    pay: () => menu.consumption.reduce((acc, current) => {
+       const cat = Object.values(menu.fetchMenu()).find((item) => item[current] !== undefined);
+       // Passo 4
+       // Object.values transforma em array, find pesquisa onde no array eu tenho coxinha ou agua, se existir, ele retorna o objeto inteiro (food ou drink)que contem coxinha ou agua.
+       return acc + cat[current];
+       // No cat[current] eu busco dentro do objeto inteiro retornado, apenas o preço do item coxinha ou agua
     }, 0) * 1.1,
   };
-  return menuRestaurante;
+  return menu;
 };
 
 module.exports = createMenu;
