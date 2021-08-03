@@ -19,7 +19,7 @@ const createStudent = (nome) => {
   let student = {
     name: nome,
     feedback: () => {
-      let message = "Eita pessoa boa!";
+      let message = 'Eita pessoa boa!';
       return message;
     },
   };
