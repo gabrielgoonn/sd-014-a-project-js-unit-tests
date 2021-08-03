@@ -83,7 +83,7 @@ const createMenu = {};
 
 const orderFromMenu = (request) => restaurant.consumption.push(request);
 
-const createMenu = (obj) => {
+const menu = (obj) => {
   Object.assign(restaurant, {
     fetchMenu: () => obj,
     consumption: [],
