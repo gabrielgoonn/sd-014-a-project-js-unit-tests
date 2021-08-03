@@ -39,4 +39,7 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+// console.log((typeof productDetails('Alcool gel', 'Máscara')));
+// console.log((productDetails('Alcool gel', 'Máscara').length));
+
 module.exports = productDetails;
