@@ -17,18 +17,17 @@
 */
 
 const vqv = (nome, idade) => {
-  nome = "juka"
-  idade = 32
+  
   if(nome | idade === undefined){
     return undefined
   }
   return `Oi, meu nome é ${nome}!
-  Tenho ${ idade } anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!`
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+
 };
 
-//console.log(vqv().replace("trabalho", "estudo"));
 // fonte : ajuda dos colegas
 //https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
 module.exports = vqv;
