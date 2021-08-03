@@ -91,10 +91,10 @@ const createMenu = (objetoMenu) => {
     pay: () => {
       let output = 0;
       menu.consumption.forEach((itemConsumo) => { // o primeiro forEach sera o que irá percorrer o array consumption
-        Object.values(menu.fetchMenu(objetoMenu)).forEach((listaItensMenu) => { // como precisamos percorrer o objeto que esta em fetchMenu, entao o objeto se transforma em um array que cada posição é um objeto que contem somente os valores o segundo ForEach sera para percorrer esse array 
-          Object.keys(listaItensMenu).forEach((item, index) => { // cada posição desse array é um objeto precisamos percorre-lo para encontrar a chave que esta em itemConsumo
-            if (item === itemConsumo) {
-              output += Object.values(listaItensMenu)[index];
+        Object.values(menu.fetchMenu()).forEach((listaItensMenu) => { // como precisamos percorrer o objeto que esta em fetchMenu, entao o objeto irá se transformar em um array que cada posição é um objeto que contem somente os valores excluindo as chaves(food e drinks) o segundo ForEach sera para percorrer esse array. 
+          Object.keys(listaItensMenu).forEach((itemChave, index) => { // como ja foi excluido as chaves food e drinks (ou mais se houver) iremos percorrer chave por chave até encontrar a chave igual ao item do Consumo que esta no parametro itemConsumo
+            if (itemChave === itemConsumo) {
+              output += Object.values(listaItensMenu)[index]; // se o if anterior for true iremos adicionar a variavel output o valor daquela chave representada pelo parametro listaItensMenu
             }
           });
         });
@@ -105,6 +105,10 @@ const createMenu = (objetoMenu) => {
   };
   return menu;
 };
+
+// explicação geral sobre a função pay:
+// como precisamos varrer o objeto que retorna em fetchMenu() que os valores das chaves são objetos, precisei transformar o objeto em um array contendo somente os valores que são outros objetos que tambem foram transformados em  um array só que sem os valores para que podemos acessar chave por chave em um laço e verificar se o parametro itemConsumo (que é o valor do array consumption que esta percorrendo no laço principal) é igual ao parametro itemChave (que é a chave que esta sendo percorrido ex:coxinha, sanduiche, agua e etc).
+// dessa forma nao importa quantas chaves tem o objeto que retorna em fetchmenu() ou quantos posição tem no array consumption a função pay ira somar todos valores de forma dinamica, como esta nos exemplos abaixo.
 
 const meuRestaurante = createMenu({
   food: {
@@ -124,11 +128,12 @@ const meuRestaurante = createMenu({
     sorvete: 6.90,
     pudim: 6.90,
     milkshake: 11.90,
-  }
+  },
 });
 
 meuRestaurante.order('sanduiche');
 meuRestaurante.order('pastel');
+meuRestaurante.order('sushi');
 meuRestaurante.order('picanha');
 meuRestaurante.order('agua');
 meuRestaurante.order('suco');
@@ -136,7 +141,6 @@ meuRestaurante.order('refrigerante');
 meuRestaurante.order('sorvete');
 meuRestaurante.order('milkshake');
 
-
-console.log(meuRestaurante.pay())// retorna 94.82
+console.log(meuRestaurante.pay());// retorna 116.71
 
 module.exports = createMenu;
