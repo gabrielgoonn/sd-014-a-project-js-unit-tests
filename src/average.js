@@ -13,14 +13,19 @@
 */
 
 const average = (number) => {
-  let roundNumber = Math.round(number);
   let finalNumber = 0;
-  if (typeof number === 'number') {
-    for (let index = 0; roundNumber.length < index; index += 1) {
-      finalNumber += roundNumber[index];
-    }
+  if (number.length === 0) {
+    return undefined;
   }
-  return finalNumber;
+  for (let indexTwo in number) {
+  if (typeof number[indexTwo] !== 'number') {
+    return undefined;
+  }
+}
+  for (let index = 0; index < number.length; index += 1) {
+    finalNumber += number[index];
+  }
+  return Math.round(finalNumber / number.length);
 };
 
 module.exports = average;
