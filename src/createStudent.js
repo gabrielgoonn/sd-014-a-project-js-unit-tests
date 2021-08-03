@@ -16,14 +16,11 @@
 */
 
 const createStudent = (nome) => {
- let objeto = { 
- name: nome,
-feedback: () => 'Eita pessoa boa!',
-   }
-return objeto
+  let objeto = {
+    name: nome,
+    feedback: () => 'Eita pessoa boa!',
+  };
+  return objeto;
 };
-
-
-
 
 module.exports = createStudent;
