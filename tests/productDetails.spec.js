@@ -38,7 +38,11 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(productDetails().length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof (productDetails()), 'object');
-    // Teste que os dois objetos são diferentes entre si.
+    // Teste que os dois objetos são diferentes entre si. Refiz o código otimizado. Special thanks a Monnylly - T14A (Peguei o código dela)
+    // assert.notStrictEqual(productDetails('Alcool Gel', 'Máscara')[0], productDetails ('Alcool Gel', 'Máscara')[1]);
+    assert.notStrictEqual(Object.entries(productDetails()[0]), Object.entries(productDetails()[1]));
     // Teste que os dois productIds terminam com 123.
+    // endsWith em https://www.devmedia.com.br/java-string-manipulando-metodos-da-classe-string/29862
+    assert.ok(Object.entries(productDetails()[0]).details.productId.endsWith('123') && Object.entries(productDetails()[1]).details.productId.endsWith('123'));
   });
 });
