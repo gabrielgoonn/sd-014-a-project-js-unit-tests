@@ -43,6 +43,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.notStrictEqual(Object.entries(productDetails()[0]), Object.entries(productDetails()[1]));
     // Teste que os dois productIds terminam com 123.
     // endsWith em https://www.devmedia.com.br/java-string-manipulando-metodos-da-classe-string/29862
-    assert.ok(Object.entries(productDetails()[0]).details.productId.endsWith('123') && Object.entries(productDetails()[1]).details.productId.endsWith('123'));
+    assert.ok(productDetails()[0].details.productId.endsWith('123'));
+    assert.ok(productDetails()[1].details.productId.endsWith('123'));
   });
 });
