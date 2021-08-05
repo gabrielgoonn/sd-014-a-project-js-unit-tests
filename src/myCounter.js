@@ -16,6 +16,7 @@
 */
 
 // se eu deixar o var, vai vazar do escopo, né non?
+// Nested Arrays in JavaScript in https://www.elated.com/nested-arrays-in-javascript/
 
 const myCounter = () => {
   let myArray = [];
