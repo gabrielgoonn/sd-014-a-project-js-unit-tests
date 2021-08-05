@@ -16,20 +16,19 @@ const average = (arrrayAv) => {
   let soma = 0;
   let verifyArray = arrrayAv.length;
 
-  if( verifyArray === 0){
-    return undefined
+  if (verifyArray === 0) {
+    return undefined;
   }
 
-  for (let i = 0; i < verifyArray; i += 1){
-    if (typeof arrrayAv[i] !== 'number'){
-      return undefined
+  for (let i = 0; i < verifyArray; i += 1) {
+    if (typeof arrrayAv[i] !== 'number') {
+      return undefined;
     }
     
     soma += arrrayAv[i];
 }
-  let mediana = Math.round( soma / verifyArray);
+  let mediana = Math.round(soma / verifyArray);
   return mediana;
-}
-
+};
 
 module.exports = average;
