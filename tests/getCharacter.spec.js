@@ -46,11 +46,10 @@ OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enq
 
 describe('9 - Implemente os casos de teste para a função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    
-   // assert.fail();
+
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    assert.strictEqual(getCharacter(), undefined);
+    assert.ok(getCharacter() === undefined);
     // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
     assert.deepStrictEqual(getCharacter('Arya'), {
       name: 'Arya Stark',
@@ -70,8 +69,8 @@ describe('9 - Implemente os casos de teste para a função `getCharacter`', () =
       phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.']
     });
     // Teste se a função se os parâmetros não são Case Sensitive.
-    assert.deepStrictEqual(getCharacter('Arya'), getCharacter('aryA'));
+    assert.strictEqual(getCharacter('Brienne'), getCharacter('brIEnnE'));
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
-    assert.strictEqual(getCharacter('Gustavo'), undefined);
+    assert.ok(getCharacter('Outro Nome') === undefined);
   });
 });
