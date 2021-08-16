@@ -12,17 +12,10 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (array) => {
-  let index = 0;
-  let soma = 0;
-  for(const numero of array) {
-    soma += numero;
-    console.log(soma);
-    index += 1;
-  }
-  let resultado = Math.round(soma / index);
-  
-  return resultado;
-};
-average([6, 6, 6, '5', 5]);
+const average = (array) => ((array.every(Number.isFinite) || array.length === 0) 
+  ? Math.round(array.reduce((total, number) => total + number, 0) / array.length)
+  : undefined);
+console.log(average([1, 2, '3']));
 module.exports = average;
+// Para um vetor vazio, o método every retorna TRUE, por isso array.length === 0
+// isNan retorna um valor MESMO que seja uma string com numeros, ccontudo isFinite retorna somente um valor numérico.
