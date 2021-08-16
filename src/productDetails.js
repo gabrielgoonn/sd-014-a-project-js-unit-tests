@@ -38,11 +38,11 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
- const produto = productDetails('Alcool gel', 'Máscara');
+//  const produto = productDetails('Alcool gel', 'Máscara');
 // console.log(Array.isArray(productDetails('Alcool gel', 'Máscara')));
 // const isObject = (array) => (typeof array) === 'object';
 // console.log(produto.every(isObject));
 // console.log(produto[1] !== produto[2]);
-const end = (array) => array.details.productId.endsWith('123');
-console.log(produto.every(end));
+// const end = (array) => array.details.productId.endsWith('123');
+// console.log(produto.every(end));
 module.exports = productDetails;
