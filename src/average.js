@@ -12,10 +12,12 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (array) => ((array.every(Number.isFinite) || array.length === 0) 
-  ? Math.round(array.reduce((total, number) => total + number, 0) / array.length)
-  : undefined);
-console.log(average([1, 2, '3']));
+const average = (array) => ((!array.every(Number.isFinite) || array.length === 0) 
+  ? undefined
+  : Math.round(array.reduce((total, number) => total + number) / array.length));
+console.log(average([]));
 module.exports = average;
-// Para um vetor vazio, o método every retorna TRUE, por isso array.length === 0
-// isNan retorna um valor MESMO que seja uma string com numeros, ccontudo isFinite retorna somente um valor numérico.
+// Para uma string vazia, o método every retorna TRUE, por isso array.length === 0 COM a negação "!" do every.
+// isNan retorna um valor MESMO que seja uma string com numeros, contudo, isFinite retorna somente um valor numérico.
+// Sem a negação do método every (!), o retorno da função será NaN, pois um vetor vazio passará no teste Number.isFinite
+// em conjunto com o método every.
